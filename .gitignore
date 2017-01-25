@@ -1,5 +1,6 @@
 build/*
 !build/readme.md
+maket/*
 design/
 .Saved/
 _arc/

@@ -1,0 +1,27 @@
+.main-nav__burger {
+	display: inline-block;
+	min-height: 24px;
+	min-width: 29px;
+	background-image: url('../img/btn-mobile.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 29px 24px;
+}
+
+.main-nav {
+	display: none;
+
+	&__item {
+		display: block;
+	}
+
+	&__link {
+		color: @text-color;
+		font-size: @font-size-menu;
+		text-decoration: none;
+	}
+
+	&__link--active {
+		color: @color-orange;
+	}
+}
