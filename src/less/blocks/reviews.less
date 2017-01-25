@@ -1,0 +1,61 @@
+.reviews {
+	background-image: url('../img/reviews-bgr-320.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 58px;
+  padding-bottom: 96px;
+
+  &__title {
+  	font-size: @font-size-h2-320;
+  	font-family: @font-family-title;
+  	font-weight: @font-weight;
+  	color: @color-white;
+  	text-align: center;
+  }
+
+  &__item {
+    position: relative;
+    background-color: @color-white;
+    border: 1px solid @color-dark-green;
+    max-height: 347px;
+  }
+
+  &__img {
+  	border: 2px solid #fff;
+  }
+
+  &__name {
+  	font-size: @font-size-small;
+  	font-weight: @font-weight-medium;
+  	color: @text-color;
+  }
+
+  &__vk {
+  	display: block;
+		height: 13px;
+		width: 22px;
+		background-image: url('../img/vk.png');
+	  background-repeat: no-repeat;
+	  background-position: center;
+	  background-size: 22px 13px;
+  }
+
+  &__text {
+    position: relative;
+		max-width: 235px;
+		text-align: center;
+		font-size: @font-size;
+		line-height: @line-height;
+		color: @color-black;
+  }
+
+  &__date {
+  	display: block;
+  	font-size: @font-size-small;
+  	line-height: @line-height-small;
+		color: @text-color;
+		max-width: 160px;
+		text-align: center;
+  }
+}

@@ -1,0 +1,40 @@
+.offers {
+	background-image: url('../img/offers-bgr-320.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 19px;
+  padding-bottom: 166px;
+  border: 1px solid @color-shade-gray-3;
+
+  &__item {
+		background-color: rgba(255, 255, 255, 0.95);
+		width: 296px;
+		min-height: 117px;
+  }
+
+  &__subtitle {
+  	font-size: @font-size-h3-320;
+  	font-weight: @font-weight-medium;
+  	color: @color-orange;
+  }
+
+  &__text {
+  	font-size: @font-size;
+  	line-height: @line-height-add;
+  	color: @text-color;
+  }
+
+  &__tab {
+  	display: inline-block;
+  	width: 15px;
+  	height: 15px;
+  	background-color: transparent;
+  	border: 2px solid @color-orange;
+  	border-radius: 50%;
+  }
+
+  &__tab--active {
+  	background-color: @color-orange;	
+  }
+}

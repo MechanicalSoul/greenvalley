@@ -32,14 +32,14 @@
 	<div class="promo">
 		<div class="promo__inner">
 			<div class="promo-slider">
-				<section class="promo-slider__item">
-					<h1 class="promo-slider__title">Семейный отдых на берегу Финского залива</h1>
-					<div class="promo-slider__text">
+				<section class="promo__item">
+					<h1 class="promo__title">Семейный отдых на берегу Финского залива</h1>
+					<div class="promo__text">
 						<p>Green Valley - это современная база отдыха в курортном районе для здорового отдыха всей семьёй.</p>
 					</div>
 				</section>
-				<a href="#" class="promo-slider__tab  promo-slider__tab--active">СЕМЕЙНЫЙ ОТДЫХ</a>
-				<a href="#" class="promo-slider__tab">КОРПОРАТИВНЫЙ</a>
+				<a href="#" class="promo__tab  promo__tab--active">СЕМЕЙНЫЙ ОТДЫХ</a>
+				<a href="#" class="promo__tab">КОРПОРАТИВНЫЙ</a>
 			</div>
 		</div>
 	</div>
@@ -60,8 +60,9 @@
 
 	<div class="gallery">
 		<div class="gallery__inner">
-			<img src="" alt="" class="gallery__main-img">
-			<div class="gallery__slider"></div>
+			<div class="gallery__slider">
+				<img src="img/gallery-img-320-1.jpg" alt="" class="gallery__img">
+			</div>
 		</div>
 	</div>
 
@@ -70,21 +71,21 @@
 			<h2 class="reviews__title">Отзывы</h2>
 			<section class="reviews__slider">
 				<section class="reviews__item">
-					<img src="" alt="" class="reviews__img">
+					<img src="img/review-author-320-1.jpg" alt="" class="reviews__img">
 					<span class="reviews__name">Екатерина В.</span>
 					<a href="#" class="reviews__vk"></a>
 					<p class="reviews__text">Наша семья счастлива, что открыла для себя Green Valley. Замечательный, комфортный отдых. Хорошее место, приветливый персонал, вкусная еда. Стали постоянными гостями!</p>
-					<p class="reviews__date">Дата отдыха: 01.06.2015 - 08.06.2015</p>
+					<span class="reviews__date">Дата отдыха:<span class="reviews__date">01.06.2015 - 08.06.2015</span></span>
 				</section>
-				<section class="reviews__item">
+<!-- 				<section class="reviews__item">
 					<img src="" alt="" class="reviews__img">
 					<span class="reviews__name">Екатерина В.</span>
 					<a href="#" class="reviews__vk"></a>
 					<p class="reviews__text">Спасибо всем без исключения сотрудникам отеля за прекрасные дни, проведённые у вас! Наслаждались тишиной, отдохнули прекрасно. Понравилось всё: тёплый приём персоналом.</p>
 					<p class="reviews__date">Дата отдыха: 15.05.2015 - 20.05.2015</p>
-				</section>
+				</section> -->
 			</section>
-			<a href="#" class="reviews__all">ВСЕ ОТЗЫВЫ</a>
+			<a href="#" class="btn  btn--green-reviews">ВСЕ ОТЗЫВЫ</a>
 		</div>
 	</div>
 
@@ -94,7 +95,7 @@
 				<h3 class="offers__subtitle">СКИДКИ В МАЕ</h3>
 					<p class="offers__text">Забронируйте номер или коттедж любой категории до 31 июня и получите скидку 10% !</p>
 			</section>
-			<a href="#" class="offers__tab"></a>
+			<a href="#" class="offers__tab  offers__tab--active"></a>
 			<a href="#" class="offers__tab"></a>
 		</div>
 	</div>
@@ -103,7 +104,7 @@
 		<div class="location__inner">
 			<h2 class="location__title">Как до нас добраться</h2>
 			<div class="location__map"></div>
-			<section class="transport">
+			<section class="transport  transport--bus">
 				<h3 class="transport__subtitle">АВТОБУСЫ</h3>
 				<ul class="transport__list">
 					<li class="transport__text"><span class="transport__text transport__text--bold">№ 211 </span>от станции метро «Черная речка» до остановки «Санаторий Репино»</li>
@@ -112,7 +113,7 @@
 					<li class="transport__text"><span class="transport__text transport__text--bold">№ 400К </span>от станции метро «Площадь Ленина»</li>
 				</ul>
 			</section>
-			<section class="transport">
+			<section class="transport  transport--train">
 				<h3 class="transport__subtitle">ЭЛЕКТРОПОЕЗД</h3>
 				<p class="transport__text">Электропоезд Выборгского направления
 									от Финляндского вокзала Санкт-Петербурга

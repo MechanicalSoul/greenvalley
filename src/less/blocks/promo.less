@@ -5,4 +5,48 @@
   background-size: cover;
   padding-top: 19px;
   padding-bottom: 166px;
+
+	&__title {
+		max-width: 320px;
+		padding-top: 3px;
+		padding-bottom: 11px;
+		color: @color-black;
+		font-family: @font-family-title;
+		font-size: @font-size-h1-320;
+		line-height: @line-height-h1-320;
+		font-weight: @font-weight;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+
+	&__text {
+		max-width: 320px;
+		padding-bottom: 3px;
+		font-size: @font-size;
+		line-height: @line-height-accent;
+		color: @color-gray-accent;
+		text-align: center;
+		background-color: rgba(255, 255, 255, 0.9);
+	}
+	
+	&__tab {
+		position: relative;
+		color: @color-gray-tab;
+		text-decoration: none;
+	}
+
+	&__tab--active {
+		color: @color-orange;
+	}
+
+	&__tab--active:after {
+		position: absolute;
+		content: '';
+		background-color: @color-orange;
+		width: 30px;
+		height: 2px;
+		bottom: -9px;
+		left: 50%;
+		margin: 0 0 0 -15px;
+	}
 }
