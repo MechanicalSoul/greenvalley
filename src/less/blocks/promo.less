@@ -4,35 +4,43 @@
   background-position: center;
   background-size: cover;
   padding-top: 19px;
-  padding-bottom: 166px;
+  padding-bottom: 178px;
+
+  &__item {
+  	background-color: @color-bgr-opacity;
+		padding-top: 3px;
+		padding-bottom: 3px;
+  }
 
 	&__title {
 		max-width: 320px;
-		padding-top: 3px;
-		padding-bottom: 11px;
+		margin: 0 auto 11px auto;
 		color: @color-black;
 		font-family: @font-family-title;
 		font-size: @font-size-h1-320;
 		line-height: @line-height-h1-320;
 		font-weight: @font-weight;
+		letter-spacing: @letter-spacing-h1;
 		text-align: center;
-		background-color: rgba(255, 255, 255, 0.9);
 	}
 
 	&__text {
 		max-width: 320px;
-		padding-bottom: 3px;
+		margin: 0 auto;
 		font-size: @font-size;
 		line-height: @line-height-accent;
 		color: @color-gray-accent;
+		letter-spacing: @letter-spacing-accent;
 		text-align: center;
-		background-color: rgba(255, 255, 255, 0.9);
 	}
 	
 	&__tab {
+		font-size: @font-size-small;
+		letter-spacing: @letter-spacing-small;
 		position: relative;
 		color: @color-gray-tab;
 		text-decoration: none;
+		margin: 0 auto;
 	}
 
 	&__tab--active {
@@ -45,7 +53,7 @@
 		background-color: @color-orange;
 		width: 30px;
 		height: 2px;
-		bottom: -9px;
+		bottom: -8px;
 		left: 50%;
 		margin: 0 0 0 -15px;
 	}
