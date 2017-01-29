@@ -1,6 +1,24 @@
 .transport {
-	max-width: 228px;
+	max-width: 227px;
 	text-align: center;
+
+	&__subtitle {
+		font-size: @font-size-small;
+		line-height: @line-height-accent;
+		letter-spacing: @letter-spacing-accent;
+	}
+
+	&__list {
+		list-style-type: none;
+	}
+
+	&__text {
+		line-height: @line-height;
+
+		&--bold {
+			font-weight: @font-weight-medium;
+		}
+	}
 
 	&--bus {
 		background-image: url('../img/bus.png');

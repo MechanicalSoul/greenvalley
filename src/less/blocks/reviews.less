@@ -1,38 +1,63 @@
 .reviews {
-	background-image: url('../img/reviews-bgr-320.jpg');
+	background-image: url('../img/reviews-bgr.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  padding-top: 58px;
-  padding-bottom: 96px;
+  background-size: auto 100%;
+  padding-top: 62px;
+  padding-bottom: 48px;
 
   &__title {
   	font-size: @font-size-h2-320;
   	font-family: @font-family-title;
   	font-weight: @font-weight;
+    letter-spacing: @letter-spacing-h2;
   	color: @color-white;
   	text-align: center;
+    margin: 0 auto;
   }
 
   &__item {
+    display: block;
     position: relative;
     background-color: @color-white;
     border: 1px solid @color-dark-green;
-    max-height: 347px;
+    margin: 50px auto 39px auto;
+    padding-bottom: 24px;
+    box-sizing: border-box;
   }
 
-  &__img {
-  	border: 2px solid #fff;
-  }
+  // &__img {
+  //   display: block;
+  //   margin: 0 auto;
+  // 	border: 2px solid #fff;
+  // }
 
   &__name {
+    display: block;
+    position: relative;
+    margin: 68px auto 10px auto;
   	font-size: @font-size-small;
   	font-weight: @font-weight-medium;
+    letter-spacing: @letter-spacing-small;
   	color: @text-color;
+    text-align: center;
+
+    &:before {
+      position: absolute;
+      content: '';
+      border: 2px solid @color-white;
+      background-image: url('../img/review-author-320-1.jpg');
+      width: 78px;
+      height: 78px;
+      top: -93px;
+      left: 50%;
+      margin: 0 auto;
+    }
   }
 
   &__vk {
   	display: block;
+    margin: 0 auto;
 		height: 13px;
 		width: 22px;
 		background-image: url('../img/vk.png');
@@ -42,7 +67,8 @@
   }
 
   &__text {
-    position: relative;
+    display: block;
+    margin: 8px auto 15px auto;
 		max-width: 235px;
 		text-align: center;
 		font-size: @font-size;
@@ -52,8 +78,10 @@
 
   &__date {
   	display: block;
+    margin: 0 auto;
   	font-size: @font-size-small;
   	line-height: @line-height-small;
+    letter-spacing: @letter-spacing-small;
 		color: @text-color;
 		max-width: 160px;
 		text-align: center;

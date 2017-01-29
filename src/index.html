@@ -10,8 +10,8 @@
 <body>
 	
 	<header class="page-header">
-		<div class="page-header__inner  column">
-			<a href="#" class="logo">GREEN VALLEY</a>
+		<div class="page-header__inner  row">
+			<a href="#" class="logo  col-xs-7  col-xs-offset-2"><img src="img/logo.png" alt="" class="logo__img"></a>
 			<nav class="main-nav">
 				<ul class="main-nav__list">
 					<li class="main-nav__item"><a href="#" class="main-nav__link  main-nav__link--active">НОМЕРА</a></li>
@@ -30,8 +30,8 @@
 	</header>
 
 	<div class="promo">
-		<div class="promo__inner  column">
-			<div class="promo-slider">
+		<div class="promo__inner  row">
+			<div class="promo-slider  col-xs-12">
 				<section class="promo__item">
 					<h1 class="promo__title">Семейный отдых на берегу Финского залива</h1>
 					<div class="promo__text">
@@ -45,33 +45,37 @@
 	</div>
 
 	<div class="rest">
-		<div class="rest__inner  column">
-			<h2 class="rest__title">Здоровый отдых</h2>
-			<p class="rest__text">Плавайте в бассейне, играйте в волейбол, футбол и другие игры. Устройте семейный пикник с шашлыками или снимите напряжение в бане или спа.
-			<span class="rest__text--add">Почувствуйте отдых!</span></p>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">БАССЕЙН</span></div>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">СПОРТИВНАЯ ПЛОЩАДКА</span></div>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">БИЛЬЯРД</span></div>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">СПА</span></div>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">БАНИ</span></div>
-			<div class="rest__item"><img src="" alt="" class="rest__img"><span class="rest__activity">АНИМАЦИЯ</span></div>
+		<div class="rest__inner  row">
+			<div class="rest__item  col-xs-12">
+				<h2 class="rest__title">Здоровый отдых</h2>
+				<p class="rest__text">Плавайте в бассейне, играйте в волейбол, футбол и другие игры. Устройте семейный пикник с шашлыками или снимите напряжение в бане или спа.
+				<span class="rest__text--add">Почувствуйте отдых!</span></p>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">БАССЕЙН</span></div>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">СПОРТИВНАЯ ПЛОЩАДКА</span></div>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">БИЛЬЯРД</span></div>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">СПА</span></div>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">БАНИ</span></div>
+				<div class="rest__option"><img src="" alt="" class="rest__img"><span class="rest__activity">АНИМАЦИЯ</span></div>
+			</div>
 		</div>
 	</div>
 
 	<div class="gallery">
-		<div class="gallery__inner  column">
-			<div class="gallery__slider">
-				<img src="img/gallery-img-320-1.jpg" alt="" class="gallery__img">
+		<div class="gallery__inner  row">
+			<div class="gallery__slider  col-xs-12">
+				<div class="gallery__wrap">
+					<img src="img/gallery-img-1.jpg" alt="" class="gallery__img">
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="reviews">
-		<div class="reviews__inner  column">
-			<h2 class="reviews__title">Отзывы</h2>
-			<section class="reviews__slider">
+		<div class="reviews__inner  row">
+			<h2 class="reviews__title  col-xs-12">Отзывы</h2>
+			<section class="reviews__slider  col-xs-12">
 				<section class="reviews__item">
-					<img src="img/review-author-320-1.jpg" alt="" class="reviews__img">
+					<!-- <img src="" alt="" class="reviews__img"> -->
 					<span class="reviews__name">Екатерина В.</span>
 					<a href="#" class="reviews__vk"></a>
 					<p class="reviews__text">Наша семья счастлива, что открыла для себя Green Valley. Замечательный, комфортный отдых. Хорошее место, приветливый персонал, вкусная еда. Стали постоянными гостями!</p>
@@ -90,10 +94,13 @@
 	</div>
 
 	<div class="offers">
-		<div class="offers__inner  column">
-			<section class="offers__item">
-				<h3 class="offers__subtitle">СКИДКИ В МАЕ</h3>
-					<p class="offers__text">Забронируйте номер или коттедж любой категории до 31 июня и получите скидку 10% !</p>
+		<div class="offers__inner  row">
+			<h2 class="offers__title  col-xs-12"><span class="offers__title offers__title--part">Акции</span><span class="offers__title offers__title--part">и предложения</span></h2>
+			<section class="offers__slider  col-xs-12">
+				<section class="offers__item">
+					<h3 class="offers__subtitle">СКИДКИ В МАЕ</h3>
+						<p class="offers__text">Забронируйте номер или коттедж любой категории до 31 июня и получите скидку 10% !</p>
+				</section>
 			</section>
 			<a href="#" class="offers__tab  offers__tab--active"></a>
 			<a href="#" class="offers__tab"></a>
@@ -101,7 +108,7 @@
 	</div>
 
 	<div class="location">
-		<div class="location__inner  column">
+		<div class="location__inner  row">
 			<h2 class="location__title">Как до нас добраться</h2>
 			<div class="location__map"></div>
 			<section class="transport  transport--bus">
@@ -113,7 +120,7 @@
 					<li class="transport__text"><span class="transport__text transport__text--bold">№ 400К </span>от станции метро «Площадь Ленина»</li>
 				</ul>
 			</section>
-			<section class="transport  transport--train">
+			<section class="transport  transport--train  col-xs-12">
 				<h3 class="transport__subtitle">ЭЛЕКТРОПОЕЗД</h3>
 				<p class="transport__text">Электропоезд Выборгского направления от Финляндского вокзала Санкт-Петербурга до платформы «Репино»</p>
 			</section>
@@ -121,15 +128,15 @@
 	</div>
 
 	<div class="hotels">
-		<div class="hotels__inner  column">
+		<div class="hotels__inner  row">
 			<h2 class="hotels__title">Где вы хотите отдохнуть?</h2>
 			<section class="hotels__item">
-				<img src="img/hotels-img-320-1.jpg" alt="" class="hotels__img">
+				<img src="img/hotels-img-1.jpg" alt="" class="hotels__img">
 				<h2 class="hotels__subtitle">В отеле</h2>
 				<span class="hotels__text">ОТ <span class="hotels__price">4000</span> РУБ./СУТКИ</span>
 			</section>
 			<section class="hotels__item">
-				<img src="img/hotels-img-320-2.jpg" alt="" class="hotels__img">
+				<img src="img/hotels-img-2.jpg" alt="" class="hotels__img">
 				<h2 class="hotels__subtitle">В коттедже</h2>
 				<span class="hotels__text">ОТ <span class="hotels__price">6800</span> РУБ./СУТКИ</span>
 			</section>
@@ -137,9 +144,9 @@
 	</div>
 
 	<div class="page-footer">
-		<div class="page-footer__inner  column">
+		<div class="page-footer__inner  row">
 			<div class="page-footer__address">г. Санкт-Петербург, Приморское ш.600</div>
-			<a href="#" class="logo">GREEN VALLEY</a>
+			<a href="#" class="logo  col-xs-7  col-xs-offset-2"><img src="img/logo.png" alt="" class="logo__img"></a>
 				<div class="page-footer__soc">
 					<a href="#" class="soc__link"></a>
 					<a href="#" class="soc__link"></a>
