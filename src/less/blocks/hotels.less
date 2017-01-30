@@ -3,6 +3,8 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: auto 100%;
+  padding-top: 43px;
+  padding-bottom: 50px;
 
   &__inner {
   	display: flex;
@@ -12,32 +14,45 @@
   }
 
 	&__title {
+		max-width: 208px;
 		font-size: @font-size-h2-320;
   	font-family: @font-family-title;
   	font-weight: @font-weight;
   	line-height: @line-height-h2-320;
+  	letter-spacing: @letter-spacing-h2;
   	color: @color-white;
   	text-align: center;
+  	margin-bottom: 16px;
 	}
 
 	&__item {
+		max-width: 280px;
 		background-color: @color-white;
+		box-sizing: border-box;
+		padding-bottom: 45px;
+		margin-top: 19px;
 	}
 
 	&__img {
 		display: block;
+		max-width: 100%;
+		height: 199px;
 	}
 
 	&__subtitle {
 		font-size: @font-size-h2-320;
   	font-family: @font-family-title;
   	font-weight: @font-weight;
+  	letter-spacing: @letter-spacing-accent;
   	text-align: center;
+  	margin-top: 32px;
+  	margin-bottom: 3px;
 	}
 
 	&__text {
 		font-size: @font-size-small;
 		font-weight: @font-weight-medium;
+		letter-spacing: @letter-spacing-accent;
 		text-align: center;
 		display: block;
 	}
