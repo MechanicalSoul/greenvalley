@@ -19,9 +19,9 @@
   }
 
   &__slider {
-    background-image: url('../img/offers-bgr-320.jpg');
+    background-image: url('../img/offers-bgr.jpg');
     background-repeat: no-repeat;
-    background-position: 0 center;
+    background-position: -60px center;
     background-size: auto 100%;
     padding-top: 157px;
     padding-bottom: 23px;
@@ -29,6 +29,16 @@
     margin-bottom: 20px;
     border: 1px solid @color-shade-gray-3;
     .col-xs-12();
+
+    @media (min-width: 321px) {
+      background-position: center;
+      background-size: 100% auto;
+    }
+
+    // @media (min-width: 768px) {
+    //   background-position: center;
+    //   background-size: 100% auto;
+    // }
   }
 
   &__item {
@@ -56,6 +66,8 @@
   &__tab {
   	width: 15px;
   	height: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
   	background-color: transparent;
   	border: 2px solid @color-orange;
   	border-radius: 50%;

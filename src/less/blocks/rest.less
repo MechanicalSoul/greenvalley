@@ -8,25 +8,50 @@
 
   &__inner {
     .column();
+
+    @media (min-width: 768px) {
+      .row();
+    }
   }
 
   &__title {
   	max-width: 155px;
     color: @color-black;
     .font-h2-320();
+
+    @media (min-width: 768px) {
+      max-width: 290px;
+    }
   }
 
   &__text {
   	max-width: 253px;
     margin-top: 31px;
     .font-text-320();
+
+    @media (min-width: 768px) {
+      max-width: 570px;
+    }
   }
 
   &__text--add {
   	display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 
   &__option {
   	display: none;
+    max-width: 95px;
+    text-align: center;
+    font-size: @font-size-small;
+    letter-spacing: @letter-spacing-small;
+    text-transform: @text-uppercase;
+
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
 }

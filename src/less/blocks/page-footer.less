@@ -50,5 +50,18 @@
 
 	&__contacts {
 		display: none;
+		width: 145px;
+		.font-small();
+
+		@media (min-width: 768px) {
+			display: block;
+		}
+	}
+
+	&__phone,
+	&__email {
+		display: block;
+		text-decoration: none;
+		color: @text-color;
 	}
 }

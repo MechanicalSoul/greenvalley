@@ -8,6 +8,10 @@
 
   &__inner {
 		.column();
+
+		@media (min-width: 768px) {
+			.row();
+		}
   }
 
 	&__title {
@@ -18,11 +22,15 @@
 	}
 
 	&__item {
-		max-width: 280px;
+		width: 280px;
 		background-color: @color-white;
 		box-sizing: border-box;
 		padding-bottom: 45px;
 		margin-top: 19px;
+
+		@media (min-width: 768px) {
+			width: 355px;
+		}
 	}
 
 	&__img {

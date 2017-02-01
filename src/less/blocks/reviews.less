@@ -22,19 +22,26 @@
     position: relative;
     background-color: @color-white;
     border: 1px solid @color-dark-green;
+    padding: 68px 45px 24px 45px;
     margin-top: 52px;
-    padding-top: 68px;
-    padding-bottom: 24px;
     margin-bottom: 39px;
     box-sizing: border-box;
     .column();
-  }
 
-  // &__img {
-  //   display: block;
-  //   margin: 0 auto;
-  // 	border: 2px solid #fff;
-  // }
+    &:last-child {
+      display: none;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
+
+    @media (min-width: 768px) {
+      width: 480px;
+      padding-right: 40px;
+      padding-left: 40px;
+    }
+  }
 
   &__name {
     display: block;
@@ -73,7 +80,6 @@
     display: block;
     margin-top: 8px;
     margin-bottom: 15px;
-		max-width: 235px;
     .font-text-320();
   }
 
