@@ -1,5 +1,4 @@
 .promo {
-  padding-bottom: 55px;
 
   &__inner {
   	.row();
@@ -11,7 +10,8 @@
 	  background-position: 0 center;
 	  background-size: auto 100%;
 	  padding-top: 20px;
-	  padding-bottom: 144px;
+	  padding-bottom: 160px;
+	  margin-bottom: 18px;
 		.col-xs-12();
 	}
 
@@ -24,22 +24,13 @@
 
 	&__title {
 		max-width: 320px;
-		color: @color-black;
-		font-family: @font-family-title;
-		font-size: @font-size-h1-320;
-		line-height: @line-height-h1-320;
-		font-weight: @font-weight;
-		letter-spacing: @letter-spacing-h1;
-		text-align: center;
+		margin-bottom: 10px;
+		.font-h1-320();
 	}
 
 	&__text {
 		max-width: 320px;
-		font-size: @font-size;
-		line-height: @line-height-accent;
-		color: @color-gray-accent;
-		letter-spacing: @letter-spacing-accent;
-		text-align: center;
+		.font-accent-320();
 	}
 	
 	&__tab {
