@@ -3,6 +3,10 @@
   padding-bottom: 67px;
   border: 1px solid @color-shade-gray-3;
 
+  &__inner {
+    .row();
+  }
+
   &__title {
     font-size: @font-size-h2-320;
     font-family: @font-family-title;
@@ -12,7 +16,8 @@
     color: @color-black;
     text-align: center;
     max-width: 228px;
-    margin: 0 auto;
+    .col-xs-12();
+    // margin: 0 auto;
 
     &--part {
       display: block;
@@ -28,6 +33,7 @@
     padding-bottom: 23px;
     margin-top: 33px;
     margin-bottom: 15px;
+    .col-xs-12();
   }
 
   &__item {
@@ -58,6 +64,7 @@
   	background-color: transparent;
   	border: 2px solid @color-orange;
   	border-radius: 50%;
+    align-self: stretch;
   }
 
   &__tab--active {

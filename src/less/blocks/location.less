@@ -2,16 +2,7 @@
 	padding-bottom: 55px;
 
 	&__inner {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	&__map {
-		height: 400px;
-		width: 100%;
-		margin-bottom: 36px;
+		.column();
 	}
 
 	&__title {
@@ -24,5 +15,51 @@
 		letter-spacing: @letter-spacing-h2;
 		text-align: center;
 		margin-bottom: 30px;
+	}
+
+	&__map {
+		height: 400px;
+		width: 100%;
+		margin-bottom: 36px;
+	}
+
+	&__item {
+		max-width: 227px;
+		text-align: center;
+		padding-top: 51px;
+
+		&--bus {
+			background-image: url('../img/bus.png');
+			background-repeat: no-repeat;
+	  	background-position: center 8px;
+		  background-size: 50px 29px;
+		}
+
+		&--train {
+			background-image: url('../img/train.png');
+			background-repeat: no-repeat;
+	  	background-position: center 12px;
+		  background-size: 58px 26px;
+		}
+	}
+
+	&__subtitle {
+		font-size: @font-size-small;
+		line-height: @line-height-accent;
+		letter-spacing: @letter-spacing-accent;
+		text-transform: @text-uppercase;
+		margin-bottom: 7px;
+	}
+
+	&__list {
+		list-style-type: none;
+	}
+
+	&__text {
+		line-height: @line-height;
+
+		&--bold {
+			font-weight: @font-weight-medium;
+		}
 	}
 }

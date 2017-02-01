@@ -6,6 +6,10 @@
   padding-top: 62px;
   padding-bottom: 48px;
 
+  &__inner {
+    .column();
+  }
+
   &__title {
   	font-size: @font-size-h2-320;
   	font-family: @font-family-title;
@@ -13,17 +17,20 @@
     letter-spacing: @letter-spacing-h2;
   	color: @color-white;
   	text-align: center;
-    margin: 0 auto;
   }
 
   &__item {
     display: block;
+    width: 320px;
     position: relative;
     background-color: @color-white;
     border: 1px solid @color-dark-green;
-    margin: 50px auto 39px auto;
+    margin-top: 50px;
+    padding-top: 68px;
     padding-bottom: 24px;
+    margin-bottom: 39px;
     box-sizing: border-box;
+    .column();
   }
 
   // &__img {
@@ -35,7 +42,7 @@
   &__name {
     display: block;
     position: relative;
-    margin: 68px auto 10px auto;
+    margin-bottom: 10px;
   	font-size: @font-size-small;
   	font-weight: @font-weight-medium;
     letter-spacing: @letter-spacing-small;
@@ -57,7 +64,6 @@
 
   &__vk {
   	display: block;
-    margin: 0 auto;
 		height: 13px;
 		width: 22px;
 		background-image: url('../img/vk.png');
@@ -68,7 +74,8 @@
 
   &__text {
     display: block;
-    margin: 8px auto 15px auto;
+    margin-top: 8px;
+    margin-bottom: 15px;
 		max-width: 235px;
 		text-align: center;
 		font-size: @font-size;
@@ -78,7 +85,6 @@
 
   &__date {
   	display: block;
-    margin: 0 auto;
   	font-size: @font-size-small;
   	line-height: @line-height-small;
     letter-spacing: @letter-spacing-small;
