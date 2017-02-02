@@ -50,17 +50,11 @@
 	}
 
 	&__text {
-		font-size: @font-size-small;
-		font-weight: @font-weight-medium;
-		letter-spacing: @letter-spacing-accent;
-		text-transform: @text-uppercase;
-		text-align: center;
 		display: block;
+		.font-price-text();
 	}
 
 	&__price {
-		font-size: @font-size-accent;
-		font-weight: @font-weight-medium;
-		color: @color-orange;
+		.font-price-colored();
 	}
 }
