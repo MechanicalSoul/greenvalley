@@ -5,6 +5,10 @@
   border-right: 1px solid @color-shade-gray-3;
   border-top: 1px solid @color-shade-gray-3;
 
+  @media (min-width: 768px) {
+		padding-top: 20px;
+  }
+
 	&__inner {
 		.column();
 
@@ -14,11 +18,16 @@
 			.row();
 			justify-content: space-between;
 		}
+
+		@media (min-width: 1200px) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 	}
 
 	&__contacts {
 		display: none;
-		margin-top: 22px;
+		margin-top: 28px;
 		width: 145px;
 		.font-small();
 
@@ -39,7 +48,7 @@
 		display: flex;
 		flex-basis: 100%;
 		justify-content: center;
-		margin-top: 12px;
+		margin-top: 2px;
 
 		@media (min-width: 768px) {
 			flex-basis: 100%;

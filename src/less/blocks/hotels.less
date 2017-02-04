@@ -6,6 +6,10 @@
   padding-top: 43px;
   padding-bottom: 50px;
 
+  @media (min-width: 768px) {
+		padding-bottom: 54px;
+  }
+
   &__inner {
 		.column();
 
@@ -22,6 +26,8 @@
 
 		@media (min-width: 768px) {
 			flex-basis: 100%;
+			margin-bottom: 10px;
+			.font-h2();
 		}
 	}
 
@@ -34,6 +40,10 @@
 
 		@media (min-width: 768px) {
 			width: 355px;
+		}
+
+		@media (min-width: 1200px) {
+			width: 380px;
 		}
 	}
 

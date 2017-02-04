@@ -1,12 +1,28 @@
 .gallery {
 	padding-bottom: 48px;
 
+	@media (min-width: 768px) {
+		padding-bottom: 50px;
+	}
+
+	@media (min-width: 1200px) {
+		padding-bottom: 40px;
+	}
+
 	&__inner {
 		.column();
 	}
 
 	&__slider {
 		width: 100%;
+
+		@media (min-width: 768px) {
+			height: 400px;
+		}
+
+		@media (min-width: 1200px) {
+			height: 615px;
+		}
 	}
 
 	&__wrap {

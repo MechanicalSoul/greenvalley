@@ -6,6 +6,11 @@
   padding-top: 62px;
   padding-bottom: 48px;
 
+  @media (min-width: 1200px) {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+
   &__inner {
     .column();
   }
@@ -14,6 +19,10 @@
   	color: @color-white;
   	text-align: center;
     .font-h2-320();
+
+    @media (min-width: 768px) {
+      .font-h2();
+    }
   }
 
   &__slider {
@@ -35,6 +44,11 @@
     margin-bottom: 39px;
     box-sizing: border-box;
     .column();
+
+    @media (min-width: 768px) {
+      margin-top: 44px;
+      margin-bottom: 48px;
+    }
 
     &:last-child {
       display: none;

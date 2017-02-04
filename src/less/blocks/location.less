@@ -1,6 +1,10 @@
 .location {
 	padding-bottom: 55px;
 
+	@media (min-width: 1200px) {
+		padding-bottom: 65px;
+	}
+
 	&__inner {
 		.column();
 
@@ -18,6 +22,7 @@
 
 		@media (min-width: 768px) {
 			width: 368px;
+			.font-h2();
 		}
 
 		@media (min-width: 1200px) {

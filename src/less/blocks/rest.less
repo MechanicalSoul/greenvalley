@@ -6,6 +6,16 @@
   padding-top: 60px;
   padding-bottom: 58px;
 
+  @media (min-width: 768px) {
+    padding-top: 58px;
+    padding-bottom: 18px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-top: 76px;
+    padding-bottom: 60px;
+  }
+
   &__inner {
     .column();
   }
@@ -17,6 +27,7 @@
 
     @media (min-width: 768px) {
       max-width: 290px;
+      .font-h2();
     }
   }
 
@@ -28,6 +39,7 @@
 
     @media (min-width: 768px) {
       max-width: 570px;
+      margin-top: 25px;
     }
   }
 
@@ -55,12 +67,16 @@
   }
 
   &__option {
-    flex-basis: 16.667%;
+    flex-basis: 25%;
     text-align: center;
     font-size: @font-size-small;
     letter-spacing: @letter-spacing-small;
     text-transform: @text-uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
+
+    @media (min-width: 1200px) {
+      flex-basis: 16.667%;
+    }
   }
 
   &__img {
