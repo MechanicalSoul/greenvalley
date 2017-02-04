@@ -15,10 +15,14 @@
   }
 
 	&__title {
-		max-width: 208px;
+		width: 208px;
   	color: @color-white;
   	margin-bottom: 16px;
   	.font-h2-320();
+
+		@media (min-width: 768px) {
+			flex-basis: 100%;
+		}
 	}
 
 	&__item {
@@ -26,7 +30,7 @@
 		background-color: @color-white;
 		box-sizing: border-box;
 		padding-bottom: 45px;
-		margin-top: 19px;
+		margin: 19px 8px 0 8px;
 
 		@media (min-width: 768px) {
 			width: 355px;

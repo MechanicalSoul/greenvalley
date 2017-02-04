@@ -1,12 +1,16 @@
 .page-header {
-  padding-top: 16px;
-  padding-bottom: 25px;
+  padding: 16px 10px 25px 10px;
   border-left: 1px solid @color-shade-gray-3;
   border-right: 1px solid @color-shade-gray-3;
   border-bottom: 1px solid @color-shade-gray-3;
 
   &__inner {
     .column();
+
+    @media (min-width: 1200px) {
+      .row();
+      justify-content: space-between;
+    }
   }
 
   &__burger {
@@ -19,9 +23,30 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: 29px 24px;
+
+    @media (min-width: 1200px) {
+      display: none;
+    }
 }
 
   &__contacts {
 		display: none;
+
+    @media (min-width: 1200px) {
+      display: block;
+    }
 	}
+
+  &__phone {
+    color: @text-color;
+    font-size: @font-size-accent;
+    letter-spacing: @letter-spacing-small;
+    font-weight: @font-weight-medium;
+    text-decoration: none;
+  }
+
+  &__address {
+    font-size: @font-size-small;
+    letter-spacing: @letter-spacing-small;
+  }
 }

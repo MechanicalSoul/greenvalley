@@ -1,14 +1,29 @@
 .main-nav {
 	display: none;
 
-	&__item {
+  @media (min-width: 1200px) {
 		display: block;
+		width: 385px;
+  }
+
+  &__list {
+  	list-style-type: none;
+  	.row();
+    justify-content: space-between;
+  }
+
+	&__item {
+
+    @media (min-width: 1200px) {
+
+    }
 	}
 
 	&__link {
 		color: @text-color;
 		font-size: @font-size-menu;
 		text-decoration: none;
+		text-transform: uppercase;
 	}
 
 	&__link--active {
