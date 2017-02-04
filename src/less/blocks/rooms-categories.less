@@ -17,14 +17,22 @@
 		padding-bottom: 35px;
 		margin-bottom: 50px;
 		.column();
+
+		@media (min-width: 768px) {
+			.row();
+			width: 728px;
+		}
 	}
 
 	&__subtitle {
 		.font-h3-320();
+		text-align: center;
+		flex-basis: 100%;
 	}
 
 	&__cost {
 		.font-price-text();
+		flex-basis: 100%;
 	}
 
 	&__price {
@@ -36,6 +44,11 @@
 		height: 225px;
 		margin-top: 26px;
 		overflow: hidden;
+
+		@media (min-width: 768px) {
+			width: 580px;
+			height: 305px;
+		}
 	}
 
 	&__img {
@@ -47,10 +60,30 @@
 		min-height: 180px;
 		padding-top: 35px;
 		padding-bottom: 35px;
+		flex-basis: 100%;
 		.font-text-320-2();
+
+		@media (min-width: 768px) {
+			width: 404px;
+			min-height: 65px;
+			padding-left: 172px;
+			padding-right: 150px;
+		}
 	}
 
 	.btn--black {
 		margin-top: 12px;
+
+		@media (min-width: 768px) {
+			margin-top: 0;
+			padding-top: 0;
+		}
+	}
+
+	.btn {
+		@media (min-width: 768px) {
+			margin-left: 10px;
+			margin-right: 58px;
+		}
 	}
 }
