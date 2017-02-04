@@ -33,20 +33,24 @@
 		display: none;
 
     @media (min-width: 1200px) {
-      display: block;
+      .row();
+      justify-content: space-between;
+      width: 500px;
     }
 	}
 
+  &__address {
+    font-size: @font-size-small;
+    letter-spacing: @letter-spacing-small;
+  }
+
   &__phone {
+    display: block;
     color: @text-color;
     font-size: @font-size-accent;
     letter-spacing: @letter-spacing-small;
     font-weight: @font-weight-medium;
     text-decoration: none;
-  }
-
-  &__address {
-    font-size: @font-size-small;
-    letter-spacing: @letter-spacing-small;
+    margin-bottom: 5px;
   }
 }

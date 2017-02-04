@@ -16,8 +16,16 @@
     .font-h2-320();
   }
 
+  &__slider {
+
+    @media (min-width: 1200px) {
+      width: 980px;
+      .row();
+      justify-content: space-between;
+    }
+  }
+
   &__item {
-    display: block;
     width: 320px;
     position: relative;
     background-color: @color-white;

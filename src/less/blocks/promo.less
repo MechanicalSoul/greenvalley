@@ -24,7 +24,7 @@
 		@media (min-width: 768px) {
 			background-color: transparent;
 			align-items: flex-start;
-			padding-left: 19px;
+			padding-left: 25px;
 		}
   }
 
@@ -36,6 +36,7 @@
 		@media (min-width: 768px) {
 			max-width: 590px;
 			background-color: @color-bgr-opacity;
+			margin-bottom: 26px;
 			.font-h1();
 		}
 	}
@@ -45,6 +46,7 @@
 		.font-accent-320();
 
 			@media (min-width: 768px) {
+			display: block;
 			max-width: 505px;
 	  	background-color: @color-bgr-opacity;
 			.font-accent();
@@ -63,6 +65,11 @@
 		color: @color-gray-tab;
 		text-decoration: none;
 		text-align: center;
+
+		@media (min-width: 768px) {
+			margin-left: 10px;
+			margin-right: 10px;
+		}
 	}
 
 	&__tab--active {

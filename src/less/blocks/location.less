@@ -3,13 +3,26 @@
 
 	&__inner {
 		.column();
+
+		@media (min-width: 1200px) {
+			.row();
+			align-items: flex-start;
+		}
 	}
 
 	&__title {
-		max-width: 157px;
+		width: 158px;
 		color: @text-color;
 		margin-bottom: 30px;
 		.font-h2-320();
+
+		@media (min-width: 768px) {
+			width: 368px;
+		}
+
+		@media (min-width: 1200px) {
+			flex-basis: 100%;
+		}
 	}
 
 	&__map {
@@ -27,9 +40,19 @@
 			width: 580px;
 		}
 
+		@media (min-width: 1200px) {
+			width: 494px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
 		&:last-child {
 			@media (min-width: 768px) {
 				width: 335px;
+			}
+
+			@media (min-width: 1200px) {
+				width: 494px;
 			}
 		}
 
@@ -63,8 +86,16 @@
 	&__text {
 		line-height: @line-height;
 
+		@media (min-width: 1200px) {
+			text-align: left;
+		}
+
 		&--bold {
 			font-weight: @font-weight-medium;
+		}
+
+		&--line {
+			display: block;
 		}
 	}
 }

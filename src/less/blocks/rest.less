@@ -4,7 +4,7 @@
   background-position: center;
   background-size: auto 100%;
   padding-top: 60px;
-  padding-bottom: 75px;
+  padding-bottom: 58px;
 
   &__inner {
     .column();
@@ -41,18 +41,21 @@
 
   &__list {
     display: none;
-    // min-height: 260px;
-    max-width: 570px;
+    width: 570px;
     list-style-type: none;
 
     @media (min-width: 768px) {
       .row();
       align-content: space-between;
     }
+
+    @media (min-width: 1200px) {
+      width: 835px;
+    }
   }
 
   &__option {
-    flex-basis: 25%;
+    flex-basis: 16.667%;
     text-align: center;
     font-size: @font-size-small;
     letter-spacing: @letter-spacing-small;
