@@ -3,8 +3,20 @@
 	padding-top: 30px;
 	padding-bottom: 50px;
 
+	@media (min-width: 768px) {
+		padding-bottom: 55px;
+	}
+
+	@media (min-width: 1200px) {
+		padding-bottom: 50px;
+	}
+
 	&__inner {
 		.column();
+
+		@media (min-width: 768px) {
+			.row();
+		}
 	}
 
 	&__item {
@@ -17,6 +29,10 @@
 
 		&:nth-child(2) {
 			display: none;
+
+			@media (min-width: 1200px) {
+				display: block;
+			}
 		}
 
 		@media (min-width: 768px) {
@@ -52,4 +68,19 @@
 	&__price {
 		.font-price-colored();
 	}
+
+	&__tab {
+  	width: 15px;
+  	height: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  	background-color: transparent;
+  	border: 2px solid @color-orange;
+  	border-radius: 50%;
+    align-self: stretch;
+  }
+
+  &__tab--active {
+  	background-color: @color-orange;	
+  }
 }
