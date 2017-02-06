@@ -1,0 +1,70 @@
+.single-room {
+	padding-top: 42px;
+	padding-bottom: 18px;
+
+	&__inner {
+		.column();
+
+		.btn {
+			margin-top: 42px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__title {
+		color: @color-black;
+		.font-h2();
+	}
+
+	&__cost {
+		.font-price-text();
+		margin-top: 5px;
+		margin-bottom: 26px;
+	}
+
+	&__price {
+		.font-price-colored();
+	}
+
+	&__slider {
+		width: 100%;
+		height: 226px;
+	}
+
+	&__img {
+		height: 100%;
+	}
+
+	&__description {
+		padding-top: 38px;
+	}
+
+	&__subtitle {
+		margin-top: 36px;
+		margin-bottom: 20px;
+		.font-h3-320();
+	}
+
+	&__text {
+		width: 280px;
+		.font-text-320-2();
+	}
+
+	&__list-item {
+		list-style-type: none;
+		position: relative;
+
+		&:before {
+			position: absolute;
+			content: '';
+			width: 5px;
+			height: 5px;
+			border-right: 2px solid @color-orange;
+			border-top: 2px solid @color-orange;
+			transform: rotate(45deg);
+			top: 7px;
+			bottom: 0;
+			left: -12px;
+		}
+	}
+}

@@ -1,34 +1,10 @@
-.hotels {
-  background-image: url('../img/hotels-bgr.jpg');
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  background-size: auto 100%;
-  padding-top: 43px;
-  padding-bottom: 50px;
+.more-rooms {
+	background-color: @color-shade-gray-5;
+	padding-top: 30px;
+	padding-bottom: 50px;
 
-  @media (min-width: 768px) {
-		padding-bottom: 54px;
-  }
-
-  &__inner {
+	&__inner {
 		.column();
-
-		@media (min-width: 768px) {
-			.row();
-		}
-  }
-
-	&__title {
-		width: 208px;
-  	color: @color-white;
-  	margin-bottom: 16px;
-  	.font-h2-320();
-
-		@media (min-width: 768px) {
-			flex-basis: 100%;
-			margin-bottom: 10px;
-			.font-h2();
-		}
 	}
 
 	&__item {
@@ -38,6 +14,10 @@
 		padding-bottom: 45px;
 		margin: 19px 8px 0 8px;
 		border: 1px solid @color-border-opacity;
+
+		&:nth-child(2) {
+			display: none;
+		}
 
 		@media (min-width: 768px) {
 			width: 355px;
@@ -64,7 +44,7 @@
   	margin-bottom: 3px;
 	}
 
-	&__text {
+	&__cost {
 		display: block;
 		.font-price-text();
 	}
