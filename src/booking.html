@@ -5,28 +5,29 @@
 	<meta content="width=device-width,initial-scale=1" name=viewport>
 	<title>Бронирование</title>
 
-	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|PT+Serif+Caption&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|PT+Serif:400,700|PT+Serif+Caption&amp;subset=cyrillic" rel="stylesheet">
+
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 	<header class="page-header">
 		<div class="page-header__inner">
-			<a href="#" class="logo"></a>
+			<a href="#" class="logo"><img src="img/logo.png" alt="GREEN VALLEY" class="logo__img"></a>
 			<nav class="main-nav">
 				<ul class="main-nav__list">
-					<li class="main-nav__item  main-nav__item--active"><a href="#" class="main-nav__link">НОМЕРА</a></li>
-					<li class="main-nav__item"><a href="#" class="main-nav__link">КОТТЕДЖ</a></li>
-					<li class="main-nav__item"><a href="#" class="main-nav__link">РЕСТОРАН</a></li>
-					<li class="main-nav__item"><a href="#" class="main-nav__link">ОТДЫХ</a></li>
-					<li class="main-nav__item"><a href="#" class="main-nav__link">КОНТАКТЫ</a></li>
+					<li class="main-nav__item"><a href="roomlist.html" class="main-nav__link  main-nav__link--active">Номера</a></li>
+					<li class="main-nav__item"><a href="singleroom.html" class="main-nav__link">Коттедж</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link">Ресторан</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link">Отдых</a></li>
+					<li class="main-nav__item"><a href="#" class="main-nav__link">Контакты</a></li>
 				</ul>
-				<span class="main-nav__burger"></span>
 			</nav>
-			<div class="page-header__contacts"><a href="#" class="page-header__phone">+7 812 777-55-88</a>
-				<div class="page-header__address">г. Санкт-Петербург, Приморское ш.600</div>
+			<a href="#" class="page-header__burger"></a>
+			<div class="page-header__contacts">
+				<div class="page-header__address"><a href="#" class="page-header__phone">+7 812 777-55-88</a>г. Санкт-Петербург, Приморское ш.600</div>
+				<a href="#" class="btn  btn--orange-1">Забронировать</a>
 			</div>
-			<a href="#" class="btn  btn--orange">ЗАБРОНИРОВАТЬ</a>
 		</div>
 	</header>
 
@@ -34,190 +35,190 @@
 		<div class="booking__inner">
 			<section class="booking__howto">
 				<h1 class="booking__title">Бронирование</h1>
-				<p class="booking__text">Чтобы забронировать номер в отеле или коттедж, заполните форму ниже или просто позвоните по телефону: <a href="#" class="booking__text booking__text--orange">+7 812 777-55-88</a></p>
+				<p class="booking__text">Чтобы забронировать номер в отеле или коттедж, заполните форму ниже или просто позвоните по телефону: <a href="#" class="booking__tel">+7 812 777-55-88</a></p>
 			</section>
 			<section class="step">
-				<span class="step__number">ШАГ 1</span>
+				<span class="step__number">Шаг 1</span>
 				<h2 class="step__subtitle">Дата отдыха</h2>
-				<span class="step_date">ДАТА ВЪЕЗДА</span>
-				<form action="" class="date-form">
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">1</option>
-						<option value="" class="date-form__option">2</option>
-						<option value="" class="date-form__option">3</option>
-						<option value="" class="date-form__option">4</option>
-						<option value="" class="date-form__option">5</option>
-						<option value="" class="date-form__option">6</option>
-						<option value="" class="date-form__option">7</option>
-						<option value="" class="date-form__option">8</option>
-						<option value="" class="date-form__option">9</option>
-						<option value="" class="date-form__option">10</option>
-						<option value="" class="date-form__option">11</option>
-						<option value="" class="date-form__option">12</option>
-						<option value="" class="date-form__option">13</option>
-						<option value="" class="date-form__option">14</option>
-						<option value="" class="date-form__option">15</option>
-						<option value="" class="date-form__option">16</option>
-						<option value="" class="date-form__option">17</option>
-						<option value="" class="date-form__option">18</option>
-						<option value="" class="date-form__option">19</option>
-						<option value="" class="date-form__option">20</option>
-						<option value="" class="date-form__option">21</option>
-						<option value="" class="date-form__option">22</option>
-						<option value="" class="date-form__option">23</option>
-						<option value="" class="date-form__option">24</option>
-						<option value="" class="date-form__option">25</option>
-						<option value="" class="date-form__option">26</option>
-						<option value="" class="date-form__option">27</option>
-						<option value="" class="date-form__option">28</option>
-						<option value="" class="date-form__option">29</option>
-						<option value="" class="date-form__option">30</option>
-						<option value="" class="date-form__option">31</option>
+				<span class="step__option  step__date">Дата въезда</span>
+				<form action="" class="step__form">
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">1</option>
+						<option value="" class="step__form--option">2</option>
+						<option value="" class="step__form--option">3</option>
+						<option value="" class="step__form--option">4</option>
+						<option value="" class="step__form--option">5</option>
+						<option value="" class="step__form--option">6</option>
+						<option value="" class="step__form--option">7</option>
+						<option value="" class="step__form--option">8</option>
+						<option value="" class="step__form--option">9</option>
+						<option value="" class="step__form--option">10</option>
+						<option value="" class="step__form--option">11</option>
+						<option value="" class="step__form--option">12</option>
+						<option value="" class="step__form--option">13</option>
+						<option value="" class="step__form--option">14</option>
+						<option value="" class="step__form--option">15</option>
+						<option value="" class="step__form--option">16</option>
+						<option value="" class="step__form--option">17</option>
+						<option value="" class="step__form--option">18</option>
+						<option value="" class="step__form--option">19</option>
+						<option value="" class="step__form--option">20</option>
+						<option value="" class="step__form--option">21</option>
+						<option value="" class="step__form--option">22</option>
+						<option value="" class="step__form--option">23</option>
+						<option value="" class="step__form--option">24</option>
+						<option value="" class="step__form--option">25</option>
+						<option value="" class="step__form--option">26</option>
+						<option value="" class="step__form--option">27</option>
+						<option value="" class="step__form--option">28</option>
+						<option value="" class="step__form--option">29</option>
+						<option value="" class="step__form--option">30</option>
+						<option value="" class="step__form--option">31</option>
 					</select>
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">1</option>
-						<option value="" class="date-form__option">2</option>
-						<option value="" class="date-form__option">3</option>
-						<option value="" class="date-form__option">4</option>
-						<option value="" class="date-form__option">5</option>
-						<option value="" class="date-form__option">6</option>
-						<option value="" class="date-form__option">7</option>
-						<option value="" class="date-form__option">8</option>
-						<option value="" class="date-form__option">9</option>
-						<option value="" class="date-form__option">10</option>
-						<option value="" class="date-form__option">11</option>
-						<option value="" class="date-form__option">12</option>
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">1</option>
+						<option value="" class="step__form--option">2</option>
+						<option value="" class="step__form--option">3</option>
+						<option value="" class="step__form--option">4</option>
+						<option value="" class="step__form--option">5</option>
+						<option value="" class="step__form--option">6</option>
+						<option value="" class="step__form--option">7</option>
+						<option value="" class="step__form--option">8</option>
+						<option value="" class="step__form--option">9</option>
+						<option value="" class="step__form--option">10</option>
+						<option value="" class="step__form--option">11</option>
+						<option value="" class="step__form--option">12</option>
 					</select>
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">2017</option>
-						<option value="" class="date-form__option">2018</option>
-						<option value="" class="date-form__option">2019</option>
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">2017</option>
+						<option value="" class="step__form--option">2018</option>
+						<option value="" class="step__form--option">2019</option>
 					</select>
 				</form>
-				<span class="step_date">ДАТА ВЫЕЗДА</span>
-				<form action="" class="date-form">
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">1</option>
-						<option value="" class="date-form__option">2</option>
-						<option value="" class="date-form__option">3</option>
-						<option value="" class="date-form__option">4</option>
-						<option value="" class="date-form__option">5</option>
-						<option value="" class="date-form__option">6</option>
-						<option value="" class="date-form__option">7</option>
-						<option value="" class="date-form__option">8</option>
-						<option value="" class="date-form__option">9</option>
-						<option value="" class="date-form__option">10</option>
-						<option value="" class="date-form__option">11</option>
-						<option value="" class="date-form__option">12</option>
-						<option value="" class="date-form__option">13</option>
-						<option value="" class="date-form__option">14</option>
-						<option value="" class="date-form__option">15</option>
-						<option value="" class="date-form__option">16</option>
-						<option value="" class="date-form__option">17</option>
-						<option value="" class="date-form__option">18</option>
-						<option value="" class="date-form__option">19</option>
-						<option value="" class="date-form__option">20</option>
-						<option value="" class="date-form__option">21</option>
-						<option value="" class="date-form__option">22</option>
-						<option value="" class="date-form__option">23</option>
-						<option value="" class="date-form__option">24</option>
-						<option value="" class="date-form__option">25</option>
-						<option value="" class="date-form__option">26</option>
-						<option value="" class="date-form__option">27</option>
-						<option value="" class="date-form__option">28</option>
-						<option value="" class="date-form__option">29</option>
-						<option value="" class="date-form__option">30</option>
-						<option value="" class="date-form__option">31</option>
+				<span class="step__option  step__date">Дата выезда</span>
+				<form action="" class="step__form">
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">1</option>
+						<option value="" class="step__form--option">2</option>
+						<option value="" class="step__form--option">3</option>
+						<option value="" class="step__form--option">4</option>
+						<option value="" class="step__form--option">5</option>
+						<option value="" class="step__form--option">6</option>
+						<option value="" class="step__form--option">7</option>
+						<option value="" class="step__form--option">8</option>
+						<option value="" class="step__form--option">9</option>
+						<option value="" class="step__form--option">10</option>
+						<option value="" class="step__form--option">11</option>
+						<option value="" class="step__form--option">12</option>
+						<option value="" class="step__form--option">13</option>
+						<option value="" class="step__form--option">14</option>
+						<option value="" class="step__form--option">15</option>
+						<option value="" class="step__form--option">16</option>
+						<option value="" class="step__form--option">17</option>
+						<option value="" class="step__form--option">18</option>
+						<option value="" class="step__form--option">19</option>
+						<option value="" class="step__form--option">20</option>
+						<option value="" class="step__form--option">21</option>
+						<option value="" class="step__form--option">22</option>
+						<option value="" class="step__form--option">23</option>
+						<option value="" class="step__form--option">24</option>
+						<option value="" class="step__form--option">25</option>
+						<option value="" class="step__form--option">26</option>
+						<option value="" class="step__form--option">27</option>
+						<option value="" class="step__form--option">28</option>
+						<option value="" class="step__form--option">29</option>
+						<option value="" class="step__form--option">30</option>
+						<option value="" class="step__form--option">31</option>
 					</select>
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">1</option>
-						<option value="" class="date-form__option">2</option>
-						<option value="" class="date-form__option">3</option>
-						<option value="" class="date-form__option">4</option>
-						<option value="" class="date-form__option">5</option>
-						<option value="" class="date-form__option">6</option>
-						<option value="" class="date-form__option">7</option>
-						<option value="" class="date-form__option">8</option>
-						<option value="" class="date-form__option">9</option>
-						<option value="" class="date-form__option">10</option>
-						<option value="" class="date-form__option">11</option>
-						<option value="" class="date-form__option">12</option>
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">1</option>
+						<option value="" class="step__form--option">2</option>
+						<option value="" class="step__form--option">3</option>
+						<option value="" class="step__form--option">4</option>
+						<option value="" class="step__form--option">5</option>
+						<option value="" class="step__form--option">6</option>
+						<option value="" class="step__form--option">7</option>
+						<option value="" class="step__form--option">8</option>
+						<option value="" class="step__form--option">9</option>
+						<option value="" class="step__form--option">10</option>
+						<option value="" class="step__form--option">11</option>
+						<option value="" class="step__form--option">12</option>
 					</select>
-					<select name="" id="" class="date-form__select">
-						<option value="" class="date-form__option">2017</option>
-						<option value="" class="date-form__option">2018</option>
-						<option value="" class="date-form__option">2019</option>
+					<select name="" id="" class="step__form--select">
+						<option value="" class="step__form--option">2017</option>
+						<option value="" class="step__form--option">2018</option>
+						<option value="" class="step__form--option">2019</option>
 					</select>
 				</form>
 			</section>
 
 			<section class="step">
-				<span class="step__number">ШАГ 2</span>
+				<span class="step__number">Шаг 2</span>
 				<h2 class="step__subtitle">Место проживания</h2>
-				<div class="place">
-					<span class="place__type">ОТЕЛЬ</span>
-					<span class="place__type">КОТТЕДЖ</span>
+				<div class="step__place">
+					<span class="step__option  step__place--hotel">Отель</span>
+					<span class="step__option  step__place--cottage">Коттедж</span>
 				</div>
 			</section>
 
 			<section class="step">
-				<span class="step__number">ШАГ 3</span>
+				<span class="step__number">Шаг 3</span>
 				<h2 class="step__subtitle">Тип коттеджа</h2>
-				<nav class="type-nav">
-					<a class="type-nav__item">ФЛАГМАН</a>
-					<a class="type-nav__item">ОЗЁРНЫЙ</a>
-					<a class="type-nav__item">ОЛЬХОВКА</a>
-					<a class="type-nav__item">ПОРТОВЫЙ</a>
-				</nav>
-				<div class="type-about">
-					<div class="type-about__item"><span class="type-about__text">ПЛОЩАДЬ 100М2</span></div>
-					<div class="type-about__item"><span class="type-about__text">3 КОМНАТЫ</span></div>
-					<div class="type-about__item"><span class="type-about__text">5 СПАЛЬНЫХ МЕСТ</span></div>
-					<div class="type-about__item"><span class="type-about__text">РАЗДЕЛЬНЫЙ САНУЗЕЛ</span></div>
-					<div class="type-about__item"><span class="type-about__text">WI-FI</span></div>
+				<ul class="step__cottage">
+					<li class="step__option  step__cottage-item">Флагман</li>
+					<li class="step__option  step__cottage-item">Озёрный</li>
+					<li class="step__option  step__cottage-item">Ольховка</li>
+					<li class="step__option  step__cottage-item">Портовый</li>
+				</ul>
+				<div class="step__about">
+					<div class="step__about-item"><span class="step__about-text">Площадь 100м2</span></div>
+					<div class="step__about-item"><span class="step__about-text">3 комнаты</span></div>
+					<div class="step__about-item"><span class="step__about-text">5 спальных мест</span></div>
+					<div class="step__about-item"><span class="step__about-text">Раздельный санузел</span></div>
+					<div class="step__about-item"><span class="step__about-text">Wi-Fi</span></div>
 				</div>
 			</section>
 
-			<section class="step">
-				<span class="step__number">ШАГ 4</span>
+			<section class="step  step--short">
+				<span class="step__number">Шаг 4</span>
 				<h2 class="step__subtitle">Персональная информация</h2>
-				<form action="" class="personal-info">
-					<input type="text" class="personal-info__item" placeholder="ИМЯ">
-					<input type="text" class="personal-info__item" placeholder="ФАМИЛИЯ">
-					<input type="text" class="personal-info__item" placeholder="НОМЕР ТЕЛЕФОНА">
-					<input type="text" class="personal-info__item" placeholder="E-MAIL">
+				<form action="" class="step__personal">
+					<input type="text" class="step__personal-item" placeholder="ИМЯ">
+					<input type="text" class="step__personal-item" placeholder="ФАМИЛИЯ">
+					<input type="text" class="step__personal-item" placeholder="НОМЕР ТЕЛЕФОНА">
+					<span class="step__personal-text">Мы свяжемся с вами в случае необходимости.</span>
+					<input type="text" class="step__personal-item" placeholder="E-MAIL">
+					<span class="step__personal-text">На этот адрес мы вышлем вам подтверждение о забронированном номере.</span>
 				</form>
-				<span class="personal-info__text">Мы свяжемся с вами в случае необходимости.</span>
-				<span class="personal-info__text">На этот адрес мы вышлем вам подтверждение о забронированном номере.</span>
 			</section>
 
 			<section class="step">
-				<span class="step__number">ШАГ 5</span>
+				<span class="step__number">Шаг 5</span>
 				<h2 class="step__subtitle">Способ оплаты</h2>
-				<div class="payment">
-					<span class="payment__text">К ОПЛАТЕ</span>
-					<span class="payment__text">-</span>
-					<span class="payment__text">Пожалуйста, выберите дату въезда и выезда, чтобы увидеть сумму к оплате</span>
+				<div class="step__total">
+					<span class="step__option">К оплате</span>
+					<span class="step__total-price">-</span>
+					<span class="step__text  step__text--price">Пожалуйста, выберите дату въезда и выезда, чтобы увидеть сумму к оплате</span>
 				</div>
-				<div class="payment">
-					<span class="payment__text">ПО ПРИЕЗДУ</span>
-					<span class="payment__text">Вы можете произвести оплату по факту заселения.</span>
+				<div class="step__later">
+					<span class="step__option">По приезду</span>
+					<span class="step__text  step__text--pay">Вы можете произвести оплату по факту заселения.</span>
 				</div>
-				<div class="payment">
-					<span class="payment__text">СЕЙЧАС</span>
-					<span class="payment__text">Прямо сейчас вы можете произвести оплату с помощью банковской карты.</span>
-					<form action="" class="card-pay">
-						<span class="card-pay__text">НОМЕР КАРТЫ</span>
-						<input type="text" class="card-pay__item" placeholder="0000-0000-0000-0000">
-						<span class="card-pay__text">КОД CVV</span>
-						<input type="text" class="card-pay__item" placeholder="123">
-						<span class="card-pay__text">ФАМИЛИЯ ВЛАДЕЛЬЦА КАРТЫ</span>
-						<input type="text" class="card-pay__item" placeholder="VLADIMIR VLADIMIROV">
-						<span class="card-pay__text">ДЕЙСТВУЕТ ДО</span>
-						<input type="text" class="card-pay__item" placeholder="01 / 2018">
+				<div class="step__now">
+					<span class="step__option">Сейчас</span>
+					<span class="step__text  step__text--pay">Прямо сейчас вы можете произвести оплату с помощью банковской карты.</span>
+					<form action="" class="step__card">
+						<span class="step__option">Номер карты</span>
+						<input type="text" class="step__card-item" placeholder="0000-0000-0000-0000">
+						<span class="step__option">Фамилия владельца карты</span>
+						<input type="text" class="step__card-item" placeholder="VLADIMIR VLADIMIROV">
+						<span class="step__option">Код CVV</span>
+						<input type="text" class="step__card-item  step__card-item--short" placeholder="123">
+						<span class="step__option">Действует до</span>
+						<input type="text" class="step__card-item  step__card-item--short" placeholder="01 / 2018">
 					</form>
 				</div>
-				<input type="submit" class="book-hotel" value="ЗАБРОНИРОВАТЬ">
+				<input type="submit" class="step__book-button" value="ЗАБРОНИРОВАТЬ">
 			</section>
 
 		</div>
@@ -225,14 +226,14 @@
 
 	<div class="page-footer">
 		<div class="page-footer__inner">
-			<div class="page-footer__address">г. Санкт-Петербург, Приморское ш.600</div>
-			<a href="#" class="logo"></a>
-			<div class="page-footer__soc">
-				<a href="#" class="soc__link"></a>
-				<a href="#" class="soc__link"></a>
-				<a href="#" class="soc__link"></a>
-			</div>
+			<div class="page-footer__contacts">г. Санкт-Петербург, Приморское ш.600</div>
+			<a href="#" class="logo"><img src="img/logo.png" alt="GREEN VALLEY" class="logo__img"></a>
 			<div class="page-footer__contacts"><a href="#" class="page-footer__phone">+7 812 777-55-88</a><a href="#" class="page-footer__email">info@greenvalley.ru</a></div>
+			<div class="page-footer__soc">
+				<a href="#" class="page-footer__link  page-footer__link--vk"></a>
+				<a href="#" class="page-footer__link  page-footer__link--ins"></a>
+				<a href="#" class="page-footer__link  page-footer__link--fb"></a>
+			</div>
 		</div>
 	</div>
 	
