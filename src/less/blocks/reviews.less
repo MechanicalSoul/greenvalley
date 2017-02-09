@@ -35,6 +35,7 @@
   }
 
   &__item {
+    position: relative;
     width: 320px;
     position: relative;
     background-color: @color-white;
@@ -45,6 +46,17 @@
     box-sizing: border-box;
     .column();
 
+    &--author {
+      position: absolute;
+      border: 2px solid @color-white;
+      background-image: url('../img/review-author-320-1.jpg');
+      width: 78px;
+      height: 78px;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     @media (min-width: 768px) {
       margin-top: 44px;
       margin-bottom: 48px;
@@ -54,7 +66,7 @@
       display: none;
 
       @media (min-width: 768px) {
-        display: block;
+        display: flex;
       }
     }
 
@@ -66,41 +78,33 @@
   }
 
   &__name {
-    display: block;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   	font-size: @font-size-small;
   	font-weight: @font-weight-medium;
     letter-spacing: @letter-spacing-small;
   	color: @text-color;
     text-align: center;
+  }
 
-    &:before {
-      position: absolute;
-      content: '';
-      border: 2px solid @color-white;
-      background-image: url('../img/review-author-320-1.jpg');
-      width: 78px;
-      height: 78px;
-      top: -93px;
-      left: 50%;
-      transform: translateX(-50%);
+  &__soc {
+		height: 17px;
+		width: 22px;
+	  background-repeat: no-repeat;
+	  background-position: center;
+    background-size: auto;
+
+    &--vk {
+      background-image: url('../img/vk.png');
+    }
+
+    &--fb {
+      background-image: url('../img/fb-review.png');
     }
   }
 
-  &__vk {
-  	display: block;
-		height: 13px;
-		width: 22px;
-		background-image: url('../img/vk.png');
-	  background-repeat: no-repeat;
-	  background-position: center;
-	  background-size: 22px 13px;
-  }
-
   &__text {
-    display: block;
-    margin-top: 8px;
+    margin-top: 6px;
     margin-bottom: 15px;
     .font-text-320();
   }
