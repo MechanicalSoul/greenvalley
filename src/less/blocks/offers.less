@@ -35,7 +35,7 @@
     background-image: url('../img/offers-bgr.jpg');
     background-repeat: no-repeat;
     background-position: -60px center;
-    background-size: auto 100%;
+    background-size: cover;
     padding-top: 157px;
     padding-bottom: 23px;
     margin-top: 33px;
@@ -43,12 +43,16 @@
     border: 1px solid @color-shade-gray-3;
     flex-basis: 100%;
 
-    @media (min-width: 321px) {
-      background-position: center;
-      background-size: 100% auto;
+    @media (min-width: 360px) {
+      background-position: 0 center;
+    }
+
+    @media (min-width: 768px) {
+      background-position: 0 -100px;
     }
 
     @media (min-width: 1200px) {
+      background-position: 0 -190px;
       padding-top: 200px;
       padding-bottom: 20px;
       margin-bottom: 30px;
