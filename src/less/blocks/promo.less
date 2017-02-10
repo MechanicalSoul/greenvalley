@@ -12,7 +12,7 @@
 	  padding-top: 20px;
 	  padding-bottom: 160px;
 	  margin-bottom: 18px;
-		.col-xs-12();
+		flex-basis: 100%;
 
 		@media (min-width: 768px) {
 			padding-bottom: 136px;
@@ -30,6 +30,17 @@
 		padding-top: 3px;
 		padding-bottom: 3px;
 		.column();
+
+		&--bgr {
+			background-color: transparent;
+
+			@media (min-width: 768px) {
+				background-color: @color-bgr-opacity;
+				display: inline-block;
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+		}
 
 		@media (min-width: 768px) {
 			background-color: transparent;
@@ -49,20 +60,17 @@
 
 		@media (min-width: 768px) {
 			max-width: 590px;
-			background-color: @color-bgr-opacity;
 			margin-bottom: 26px;
 			.font-h1();
 		}
 	}
 
 	&__text {
-		max-width: 320px;
+		width: 320px;
 		.font-accent-320();
 
 			@media (min-width: 768px) {
-			display: block;
-			max-width: 505px;
-	  	background-color: @color-bgr-opacity;
+			width: 525px;
 			.font-accent();
 			text-align: left;
 		}
