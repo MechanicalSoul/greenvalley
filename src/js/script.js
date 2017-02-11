@@ -1,3 +1,8 @@
 $(document).ready(function(){
-  // весь ваш код
+  $('.page-header__burger').on('click', function(event) {
+  	
+  	event.preventDefault();
+
+  	$('.main-nav').slideToggle('slow');
+  });
 });

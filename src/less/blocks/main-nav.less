@@ -1,32 +1,53 @@
 .main-nav {
 	display: none;
+	position: absolute;
+	top: 75px;
+	left: 0;
+	width: 100%;
 
   @media (min-width: 1200px) {
+  	position: relative;
+  	top: 0;
+  	left: 0;
 		display: block;
-		min-width: 382px;
+		width: 382px;
 		margin-top: 5px;
 		margin-right: 74px;
   }
 
   &__list {
   	list-style-type: none;
-  	.row();
-    justify-content: space-between;
+		.column();
+
+    @media (min-width: 1200px) {
+			.row();
+			justify-content: space-between;
+    }
   }
 
 	&__item {
+		padding-top: 14px;
+		padding-bottom: 14px;
+		width: 100%;
+		text-align: center;
+		background-color: @color-white;
+	  border: 1px solid @color-shade-gray-3;
 
     @media (min-width: 1200px) {
-
+			padding: 0;
+			width: auto;
+			border: none;
     }
 	}
 
 	&__link {
+		display: block;
 		color: @text-color;
 		font-size: @font-size-menu;
 		letter-spacing: @letter-spacing-menu;
 		text-decoration: none;
 		text-transform: uppercase;
+		width: 100%;
 	}
 
 	&__link--active {
