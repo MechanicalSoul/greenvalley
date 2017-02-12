@@ -157,8 +157,8 @@
 				<span class="step__number">Шаг 2</span>
 				<h2 class="step__subtitle">Место проживания</h2>
 				<div class="step__place">
-					<span class="step__option  step__place--hotel">Отель</span>
-					<span class="step__option  step__place--cottage">Коттедж</span>
+					<span class="step__option  step__place-item  step__place-item--hotel">Отель</span>
+					<span class="step__option  step__place-item  step__place-item--cottage  step__place-item--active">Коттедж</span>
 				</div>
 			</section>
 
@@ -166,7 +166,7 @@
 				<span class="step__number">Шаг 3</span>
 				<h2 class="step__subtitle">Тип коттеджа</h2>
 				<ul class="step__cottage">
-					<li class="step__option  step__cottage-item">Флагман</li>
+					<li class="step__option  step__cottage-item  step__cottage-item--active">Флагман</li>
 					<li class="step__option  step__cottage-item">Озёрный</li>
 					<li class="step__option  step__cottage-item">Ольховка</li>
 					<li class="step__option  step__cottage-item">Портовый</li>
@@ -226,7 +226,7 @@
 				<div class="step__total">
 					<span class="step__option">К оплате</span>
 					<span class="step__total-price">-</span>
-					<span class="step__text  step__text--price">Пожалуйста, выберите дату въезда и выезда, чтобы увидеть сумму к оплате</span>
+					<span class="step__text  step__text--price">Пожалуйста, <a href="#" class="step__required-action">выберите дату</a> въезда и выезда, чтобы увидеть сумму к оплате</span>
 				</div>
 				<input type="submit" class="step__book-button" value="ЗАБРОНИРОВАТЬ">
 			</section>
@@ -247,5 +247,7 @@
 		</div>
 	</div>
 	
+	<script type="text/javascript" src="js/script.min.js"></script>
+
 </body>
 </html>
