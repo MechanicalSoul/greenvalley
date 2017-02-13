@@ -14,6 +14,10 @@
 		text-decoration: none;
 		text-align: center;
 		padding: 9px;
+
+		&:hover {
+			background-color: @color-btn-active-1;
+		}
 	}
 
 	&--orange-2 {
@@ -33,6 +37,25 @@
 		background-repeat: no-repeat;
 		background-size: 15px 16px;
 		background-position: 20px 8px;
+
+		&:hover {
+			background-color: @color-btn-active-1;
+		}
+	}
+
+	&--green-1 {
+		padding: 5px;
+		background-color: @color-green;
+		outline: none;
+		border: none;
+		.booking-text-option();
+		color: @color-white;
+		font-weight: @font-weight-medium;
+		cursor: pointer;
+
+		&:hover {
+			background-color: @color-btn-active-2;
+		}
 	}
 
 	&--green-2 {
@@ -49,6 +72,11 @@
 		text-decoration: none;
 		text-align: center;
 		padding: 9px;
+
+		&:hover {
+			background-color: @color-white;
+			color: @color-green;
+		}
 	}
 
 	&--black {
@@ -61,5 +89,9 @@
 		text-decoration: none;
 		text-align: center;
 		padding-top: 9px;
+
+		&:hover {
+			border: none;
+		}
 	}
 }

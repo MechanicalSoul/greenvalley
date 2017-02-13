@@ -22,6 +22,11 @@
 			.row();
 			width: 728px;
 		}
+
+		@media (min-width: 1200px) {
+			width: 1180px;
+			justify-content: space-between;
+		}
 	}
 
 	&__subtitle {
@@ -60,12 +65,12 @@
 		min-height: 180px;
 		padding-top: 35px;
 		padding-bottom: 35px;
-		flex-basis: 100%;
 		.font-text-320-2();
 
 		@media (min-width: 768px) {
 			width: 404px;
 			min-height: 65px;
+			flex-basis: 100%;
 			padding-left: 172px;
 			padding-right: 150px;
 		}
