@@ -6,9 +6,9 @@ $(document).ready(function(){
   	$('.main-nav').slideToggle('slow');
   });
 
-  // $('.owl-carousel').owlCarousel({
-  // 	loop: true,
-  // 	center: true,
-  // 	items: 3
-  // });
+  $('.owl-carousel').owlCarousel({
+  	loop: true,
+  	center: true,
+  	items: 3
+  });
 });

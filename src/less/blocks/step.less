@@ -1,19 +1,23 @@
 .step {
-	.column();
-	width: 100%;
-	padding-top: 50px;
-	padding-bottom: 50px;
 
-	@media (min-width: 768px) {
-		.row();
-	}
-
-	&:nth-child(even) {
+	&:nth-child(odd) {
 		background-color: @color-shade-gray-7;
 	}
 
 	&:last-child {
 		padding-bottom: 80px;
+	}
+
+	&__inner {
+		.container();
+		.column();
+		width: 100%;
+		padding-top: 50px;
+		padding-bottom: 50px;
+
+		@media (min-width: 768px) {
+			.row();
+		}
 	}
 
 	&--short {
