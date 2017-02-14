@@ -1,43 +1,46 @@
 .promo {
   background-image: url('../img/promo-bgr.jpg');
   background-repeat: no-repeat;
-  background-position: 0 center;
-  background-size: cover;
+  background-position: 0 top;
+  background-size: auto 320px;
+
+  @media (min-width: 1200px) {
+  	background-size: auto 430px;
+  }
 
   &__inner {
+  	padding-top: 20px;
   	.row();
   	.container();
+
+		@media (min-width: 1200px) {
+			padding-top: 86px;
+		}
   }
 
   &__slider {
-	  padding-top: 20px;
-	  padding-bottom: 160px;
-	  margin-bottom: 18px;
+		padding-top: 3px;
+	  margin-bottom: 180px;
 		flex-basis: 100%;
 
 		@media (min-width: 768px) {
-			padding-bottom: 136px;
+			margin-bottom: 156px;
 		}
 
 		@media (min-width: 1200px) {
-			padding-top: 85px;
-			padding-bottom: 178px;
-			margin-bottom: 40px;
+			margin-bottom: 220px;
 		}
 	}
 
   &__item {
-  	background-color: @color-bgr-opacity;
-		padding-top: 3px;
-		padding-bottom: 3px;
-		.column();
+  	display: none;	
+
 
 		&--active {
-			display: flex;
-		}
-
-		&--inactive {
-			display: none;
+			// display: flex;
+			.column();
+			  	background-color: @color-bgr-opacity;
+		
 		}
 
 		&--bgr {
@@ -68,7 +71,7 @@
 		.font-h1-320();
 
 		@media (min-width: 768px) {
-			max-width: 590px;
+			max-width: 700px;
 			margin-bottom: 26px;
 			.font-h1();
 		}
@@ -84,37 +87,37 @@
 			text-align: left;
 		}
 	}
-	
-	&__tab {
-		width: 138px;
-		margin-left: 4px;
-		margin-right: 4px;
-		font-size: @font-size-small;
-		letter-spacing: @letter-spacing-small;
-		text-transform: @text-uppercase;
-		position: relative;
-		color: @color-gray-tab;
-		text-decoration: none;
-		text-align: center;
 
-		@media (min-width: 768px) {
-			margin-left: 10px;
-			margin-right: 10px;
-		}
-	}
+  &__tab {
+    width: 138px;
+    margin-left: 4px;
+    margin-right: 4px;
+    font-size: @font-size-small;
+    letter-spacing: @letter-spacing-small;
+    text-transform: @text-uppercase;
+    position: relative;
+    color: @color-gray-tab;
+    text-decoration: none;
+    text-align: center;
 
-	&__tab--active {
-		color: @color-orange;
-	}
+    @media (min-width: 768px) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 
-	&__tab--active:after {
-		position: absolute;
-		content: '';
-		background-color: @color-orange;
-		width: 30px;
-		height: 2px;
-		bottom: -8px;
-		left: 50%;
-		margin: 0 0 0 -15px;
-	}
+  &__tab--active {
+    color: @color-orange;
+  }
+
+  &__tab--active:after {
+    position: absolute;
+    content: '';
+    background-color: @color-orange;
+    width: 30px;
+    height: 2px;
+    bottom: -8px;
+    left: 50%;
+    margin: 0 0 0 -15px;
+  }
 }
