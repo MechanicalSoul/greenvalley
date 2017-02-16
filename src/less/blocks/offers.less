@@ -33,6 +33,29 @@
   }
 
   &__slider {
+    cursor: pointer;
+
+    .owl-dots {
+      text-align: center;
+
+      .active {
+        background-color: @color-orange;
+      }
+    }
+
+    .owl-dot {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-left: 10px;
+      margin-right: 10px;
+      background-color: transparent;
+      border: 2px solid @color-orange;
+      border-radius: 50%;
+    }
+  }
+
+  &__item {
     background-image: url('../img/offers-bgr.jpg');
     background-repeat: no-repeat;
     background-position: -60px center;
@@ -60,11 +83,14 @@
     }
   }
 
-  &__item {
-		background-color: rgba(255, 255, 255, 0.95);
-		width: 296px;
+  &__text {
+    background-color: rgba(255, 255, 255, 0.95);
+    width: 296px;
     padding: 16px 0 14px 18px;
     box-sizing: border-box;
+    font-size: @font-size;
+    line-height: @line-height-add;
+    color: @text-color;
 
     @media (min-width: 1200px) {
       width: 350px;
@@ -72,21 +98,17 @@
   }
 
   &__subtitle {
-  	font-size: @font-size-h3-320;
-  	font-weight: @font-weight-medium;
+    font-size: @font-size-h3-320;
+    font-weight: @font-weight-medium;
     letter-spacing: @letter-spacing-accent;
     text-transform: @text-uppercase;
-  	color: @color-orange;
+    color: @color-orange;
     margin-bottom: 5px;
   }
 
-  &__text {
-  	font-size: @font-size;
-  	line-height: @line-height-add;
-  	color: @text-color;
-  }
-
   &__tab {
+    display: none;
+
   	width: 15px;
   	height: 15px;
     margin-left: 10px;
