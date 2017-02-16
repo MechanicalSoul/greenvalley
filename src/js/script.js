@@ -63,24 +63,19 @@ $(document).ready(function(){
   		$('.gallery__main-img').attr('src', $(this).attr('src'));
   });
 
-  $('.reviews__slider').rhinoslider();
+  $('.reviews__slider').slice(1).hide();
+  var n = 0;
 
-  // $('.reviews__slider').slice(1).hide();
-  // var n = 0;
-
-  // $('.reviews__item').on('click', function() {
-
-		
-	 //  	$('.reviews__slider').eq(n).fadeOut(400, function() {
-	 //  		$('.reviews__slider').eq(n+1).fadeIn(400);
-	 //  		n = ++n;
-	 //  		console.log(n);
-
-	 //  		  	if(n >= 2 || n < 0) {
-		// 	n = 0;
-		// 	console.log(n + "aa");
-		// }
-	 //  	});
-		
-  // });
+  $('.reviews__item').on('click', function() {
+  	$('.reviews__slider').eq(n).fadeOut(400, function() {
+  		$('.reviews__slider').eq(n+1).fadeIn(400);
+  		n = ++n;
+  		console.log(n);
+	  	if(n >= 2 || n < 0) {
+				n = 0;
+				$('.reviews__slider').eq(n).fadeIn(400);
+				console.log(n + "aa");
+			}
+  	});
+  });
 });
