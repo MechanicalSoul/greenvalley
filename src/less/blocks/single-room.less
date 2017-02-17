@@ -49,7 +49,9 @@
 	}
 
 	&__item {
-		width: 280px;
+		position: relative;
+		.column();
+		width: 320px;
 
 		@media (min-width: 768px) {
 			width: 768px;
@@ -61,7 +63,30 @@
 		}
 	}
 
+	&__btn {
+		display: none;
+
+		@media (min-width: 768px) {
+			display: block;
+			position: absolute;
+			content: '';
+			top: 20px;
+			right: 20px;
+			width: 22px;
+			height: 22px;
+			background-image: url('../img/modal.png');
+			background-repeat: no-repeat;
+			background-position: center;	
+			z-index: 10;
+		}
+
+		@media (min-width: 1200px) {
+			top: 52px;
+		}
+	}
+
 	&__slider {
+		position: relative;
 		width: 100%;
 		height: 226px;
 		overflow: hidden;
@@ -75,16 +100,68 @@
 			height: 396px;
 			order: 2;
 		}
+
+		.owl-nav {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+		}
+
+		.owl-prev:after {
+			position: absolute;
+			content: '';
+			width: 30px;
+			height: 30px;
+			top: -15px;
+			left: 30px;
+			border-right: 2px solid @color-white;
+			border-top: 2px solid @color-white;
+			transform: rotate(-135deg);
+		}
+
+		.owl-next:after {
+			position: absolute;
+			content: '';
+			width: 30px;
+			height: 30px;
+			top: -15px;
+			right: 30px;
+			border-right: 2px solid @color-white;
+			border-top: 2px solid @color-white;
+			transform: rotate(45deg);
+		}
 	}
 
 	&__img {
 		height: 100%;
 	}
 
+	&__modal {
+		display: none;
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		z-index: 99999;
+		background-color: @color-bgr-opacity;
+		cursor: pointer;
+	}
+
+	&__modal-img {
+		display: block;
+		margin: 50px auto 0 auto;
+		height: auto;
+		width: auto;
+	}
+
 	&__description {
+		width: 280px;
 		padding-top: 38px;
 
 		@media (min-width: 768px) {
+			width: 100%;
 			padding-top: 5px;
 			padding-left: 20px;
 		}
