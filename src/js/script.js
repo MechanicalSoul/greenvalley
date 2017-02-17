@@ -87,3 +87,30 @@ $(document).ready(function(){
   	items: 1
   });
 });
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 60.192, lng: 29.638},
+    scrollwheel: false,
+    disableDefaultUI: true,
+    zoom: 14
+  });
+
+  var marker = new google.maps.Marker({
+    position: {lat: 60.192, lng: 29.638},
+    map: map,
+    icon: '../img/marker.png'
+  });
+
+	var center;
+	function calculateCenter() {
+	  center = map.getCenter();
+	}
+	google.maps.event.addDomListener(map, 'idle', function() {
+	  calculateCenter();
+	});
+	google.maps.event.addDomListener(window, 'resize', function() {
+	  map.setCenter(center);
+	});
+}
+
