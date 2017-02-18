@@ -57,7 +57,8 @@
 	&__text {
 		.booking-text();
 
-		&--price {
+		&--price,
+		&--personal {
 			width: 220px;
 			align-self: flex-start;
 			text-indent: 18px;
@@ -65,6 +66,7 @@
 			background-repeat: no-repeat;
 			background-size: auto;
 			background-position: 0 2px;
+			margin-bottom: 5px;
 		}
 	}
 
@@ -356,7 +358,8 @@
 		margin-bottom: 10px;
 	}
 
-	&__required-action {
+	&__required-action--date,
+	&__required-action--personal {
 		text-decoration: none;
 		color: @color-shade-gray-1;
 		border-bottom: 1px dashed;

@@ -125,6 +125,10 @@ $(document).ready(function(){
 		$('body').removeClass('modal-open');
 	});
 
+	$( function() {
+    $('#datepicker').datepicker();
+  } );
+
   $('.step__place-item').on('click', function() {
   	if(!$(this).hasClass('step__place-item--active')) {
 	  	$('.step__place-item').toggleClass('step__place-item--active');
@@ -166,6 +170,50 @@ $(document).ready(function(){
 	  	$('.step__pay-time').toggleClass('step__pay-time--active');
 	  }
   });
+
+
+
+$('.step__form-select').on('change', cost);
+$('.step__personal-item').on('change', cost);
+
+  function cost() {
+
+  $('.step__form-select').each(function() {
+  	if($(this).val() == "") {
+  		$('.step__text--price').show();
+  	}
+  	else {
+  		$('.step__text--price').hide();
+  	}
+  });
+
+  $('.step__personal-input').each(function() {
+  	if($(this).val() == "") {
+  		$('.step__text--personal').show();
+  	}
+  	else {
+  		$('.step__text--personal').hide();
+  	}
+  });
+
+  if(!$('[type="email"]')[0].checkValidity()) {
+  	console.log("not valid");
+  }
+  
+	// var itemCost = document.getElementById("path__select").value;
+	// console.log(itemCost);
+	// var select = document.getElementById("people-number__select").value;
+	// console.log(select);
+	// var totalPrice = select * itemCost;
+	// console.log(totalPrice);
+	// document.getElementById("price").innerText=totalPrice + ' Р';
+
+	}
+
+
+
+
+
 });
 
 function initMap() {
