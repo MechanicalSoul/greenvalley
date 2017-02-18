@@ -141,10 +141,10 @@ $(document).ready(function(){
 	  }
   });
 
-var stepOptions = document.querySelectorAll('.step__living-type--active .step__list-item');
-var stepAbouts = document.querySelectorAll('.step__living-type--active .step__about');
-var stepOptionsArray = Array.prototype.slice.call(stepOptions);
-var stepAboutsArray = Array.prototype.slice.call(stepAbouts);
+	var stepOptions = document.querySelectorAll('.step__living-type--active .step__list-item');
+	var stepAbouts = document.querySelectorAll('.step__living-type--active .step__about');
+	var stepOptionsArray = Array.prototype.slice.call(stepOptions);
+	var stepAboutsArray = Array.prototype.slice.call(stepAbouts);
 
 	function changeAbout(event) {
 	  var currentLink = event.target;
@@ -160,6 +160,12 @@ var stepAboutsArray = Array.prototype.slice.call(stepAbouts);
 	for(var i = 0; i < stepOptionsArray.length; i++) {
 	  stepOptionsArray[i].addEventListener('click', changeAbout);
 	}
+
+  $('.step__pay-time').on('click', function() {
+  	if(!$(this).hasClass('step__pay-time--active')) {
+	  	$('.step__pay-time').toggleClass('step__pay-time--active');
+	  }
+  });
 });
 
 function initMap() {

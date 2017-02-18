@@ -71,15 +71,21 @@
 	&__form {
 		font-size: 0;
 
-		&--select {
-			outline: none;
-			padding: 15px;
-			border: 1px solid @color-shade-gray-3;
-		}
-
 		@media (min-width: 768px) {
 			margin-left: 10px;
 			margin-right: 10px;
+		}
+	}
+
+	&__form-select {
+		width: 54px;
+		outline: none;
+		padding: 4px 15px 4px 15px;
+		border: 1px solid @color-shade-gray-3;
+		.booking-text-option();
+
+		&--year {
+			width: 70px;
 		}
 	}
 
@@ -261,6 +267,10 @@
 		.column();
 		padding-top: 8px;
 
+		input {
+			.booking-text-option();
+		}
+
 		@media (min-width: 768px) {
 			width: 768px;
 			.row();
@@ -274,7 +284,7 @@
 
 	&__personal-item {
 		width: 280px;
-		padding: 16px;
+		padding: 4px;
 		text-align: center;
 		margin-top: 20px;
 		outline: none;
@@ -282,6 +292,10 @@
 
 		@media (min-width: 768px) {
 			width: 355px;
+		}
+
+		&:focus {
+			border: 1px solid @color-shade-gray-2;
 		}
 
 		&:nth-child(4),
@@ -356,12 +370,18 @@
 		padding: 10px 40px 8px 40px;
 		.row();
 		justify-content: flex-start;
+		background-image: url('../img/booking-check-inactive.png');
+		background-repeat: no-repeat;
+		background-size: auto;
+		background-position: 40px center;
+		cursor: pointer;
 
 		@media (min-width: 768px) {
 			width: 100%;
 			padding-left: 20px;
 			padding-bottom: 12px;
 			margin-bottom: 25px;
+			background-position: 20px 22px;
 		}
 
 		.step__text {
@@ -380,10 +400,6 @@
 		width: 130px;
 		text-align: left;
 		font-weight: @font-weight-medium;
-		background-image: url('../img/booking-check-inactive.png');
-		background-repeat: no-repeat;
-		background-size: auto;
-		background-position: 0 center;
 
 		@media (min-width: 768px) {
 			padding-left: 30px;
@@ -397,10 +413,16 @@
 		padding: 10px 40px 20px 40px;
 		.row();
 		justify-content: space-between;
+		background-image: url('../img/booking-check-inactive.png');
+		background-repeat: no-repeat;
+		background-size: auto;
+		background-position: 40px 22px;
+		cursor: pointer;
 
 		@media (min-width: 768px) {
 			width: 100%;
 			padding-left: 20px;
+			background-position: 20px 22px;
 		}
 
 		.step__text {
@@ -414,9 +436,17 @@
 		}
 	}
 
+	&__pay-time--active {
+		background-image: url('../img/booking-check.png');
+	}
+
 	&__card {
 		.column();
 		align-items: flex-start;
+
+		input {
+			.booking-text-option();
+		}
 
 		@media (min-width: 768px) {
 			.row();
@@ -473,10 +503,13 @@
 	&__card-input {
 		display: block;
 		width: 240px;
-		padding: 12px 12px ;
 		outline: none;
 		border: 1px solid @color-shade-gray-3;
 		text-align: center;
+
+		&:focus {
+			border: 1px solid @color-shade-gray-2;
+		}
 
 		&--short {
 			width: 135px;

@@ -43,7 +43,10 @@
 			<h2 class="step__subtitle">Дата отдыха</h2>			
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата въезда</span>
-				<select name="" id="" class="step__form--select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year">
+				<!-- <select name="" id="" class="step__form--select">
 					<option value="" class="step__form--option">1</option>
 					<option value="" class="step__form--option">2</option>
 					<option value="" class="step__form--option">3</option>
@@ -94,11 +97,14 @@
 					<option value="" class="step__form--option">2017</option>
 					<option value="" class="step__form--option">2018</option>
 					<option value="" class="step__form--option">2019</option>
-				</select>
+				</select> -->
 			</form>
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата выезда</span>
-				<select name="" id="" class="step__form--select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year">
+				<!-- <select name="" id="" class="step__form--select">
 					<option value="" class="step__form--option">1</option>
 					<option value="" class="step__form--option">2</option>
 					<option value="" class="step__form--option">3</option>
@@ -149,7 +155,7 @@
 					<option value="" class="step__form--option">2017</option>
 					<option value="" class="step__form--option">2018</option>
 					<option value="" class="step__form--option">2019</option>
-				</select>
+				</select> -->
 			</form>
 		</div>
 	</section>
@@ -250,11 +256,11 @@
 			<span class="step__number">Шаг 4</span>
 			<h2 class="step__subtitle">Персональная информация</h2>
 			<form action="" class="step__personal">
-				<input type="text" class="step__personal-item" placeholder="ИМЯ">
-				<input type="text" class="step__personal-item" placeholder="ФАМИЛИЯ">
-				<input type="text" class="step__personal-item" placeholder="НОМЕР ТЕЛЕФОНА">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Имя'" class="step__personal-item" placeholder="Имя">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Фамилия'" class="step__personal-item" placeholder="Фамилия">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Номер телефона'" class="step__personal-item" placeholder="Номер телефона">
 				<span class="step__personal-item">Мы свяжемся с вами в случае необходимости.</span>
-				<input type="text" class="step__personal-item" placeholder="E-MAIL">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" class="step__personal-item" placeholder="E-mail">
 				<span class="step__personal-item">На этот адрес мы вышлем вам подтверждение о забронированном номере.</span>
 			</form>
 		</div>
@@ -265,28 +271,28 @@
 			<span class="step__number">Шаг 5</span>
 			<h2 class="step__subtitle">Способ оплаты</h2>
 			<div class="step__payment">
-				<div class="step__later">
+				<div class="step__later  step__pay-time">
 					<span class="step__option  step__pay-check">По приезду</span>
 					<span class="step__text">Вы можете произвести оплату по факту заселения.</span>
 				</div>
-				<div class="step__now">
+				<div class="step__now  step__pay-time  step__pay-time--active">
 					<span class="step__option  step__pay-check">Сейчас</span>
 					<span class="step__text">Прямо сейчас вы можете произвести оплату с помощью банковской карты.</span>
 					<form action="" class="step__card">
 						<div class="step__card-item">
 							<span class="step__option">Номер карты</span>
-							<input type="text" class="step__card-input" placeholder="0000-0000-0000-0000">
+							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='0000-0000-0000-0000'"  class="step__card-input" placeholder="0000-0000-0000-0000">
 						</div>
 						<div class="step__card-item">
 							<span class="step__option">Фамилия владельца карты</span>
-							<input type="text" class="step__card-input" placeholder="VLADIMIR VLADIMIROV">
+							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Vladimir Vladimirov'"  class="step__card-input" placeholder="Vladimir Vladimirov">
 						</div>
 						<div class="step__card-item">
 							<span class="step__option">Код CVV <a href="#" class="step__cvv"></a></span>
-							<input type="text" class="step__card-input  step__card-input--short" placeholder="123">
+							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='123'"  class="step__card-input  step__card-input--short" placeholder="123">
 						</div>
 						<div class="step__card-item"><span class="step__option">Действует до</span>
-							<input type="text" class="step__card-input  step__card-input--short" placeholder="01 / 2018">
+							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='01 / 2018'"  class="step__card-input  step__card-input--short" placeholder="01 / 2018">
 						</div>
 					</form>
 				</div>
