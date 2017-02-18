@@ -125,6 +125,41 @@ $(document).ready(function(){
 		$('body').removeClass('modal-open');
 	});
 
+  $('.step__place-item').on('click', function() {
+  	if(!$(this).hasClass('step__place-item--active')) {
+	  	$('.step__place-item').toggleClass('step__place-item--active');
+	  	$('.step__living-type').toggleClass('step__living-type--active');
+	  
+			stepOptions = document.querySelectorAll('.step__living-type--active .step__list-item');
+			stepAbouts = document.querySelectorAll('.step__living-type--active .step__about');
+			stepOptionsArray = Array.prototype.slice.call(stepOptions);
+			stepAboutsArray = Array.prototype.slice.call(stepAbouts);
+
+			for(var i = 0; i < stepOptionsArray.length; i++) {
+			  stepOptionsArray[i].addEventListener('click', changeAbout);
+			}
+	  }
+  });
+
+var stepOptions = document.querySelectorAll('.step__living-type--active .step__list-item');
+var stepAbouts = document.querySelectorAll('.step__living-type--active .step__about');
+var stepOptionsArray = Array.prototype.slice.call(stepOptions);
+var stepAboutsArray = Array.prototype.slice.call(stepAbouts);
+
+	function changeAbout(event) {
+	  var currentLink = event.target;
+    for(var j = 0; j < stepOptionsArray.length; j++) {
+      stepOptionsArray[j].classList.remove('step__list-item--active');
+      stepAboutsArray[j].classList.remove('step__about--active');
+    }
+    currentLink.classList.add('step__list-item--active');
+    var pos = stepOptionsArray.indexOf(currentLink);
+    stepAboutsArray[pos].classList.add('step__about--active');
+	}
+
+	for(var i = 0; i < stepOptionsArray.length; i++) {
+	  stepOptionsArray[i].addEventListener('click', changeAbout);
+	}
 });
 
 function initMap() {

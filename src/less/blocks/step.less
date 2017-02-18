@@ -37,6 +37,7 @@
 		.font-h3-320();
 		width: 250px;
 		text-align: center;
+		margin: 0 auto;
 		
 		@media (min-width: 768px) {
 			width: 100%;
@@ -95,11 +96,13 @@
 	}
 
 	&__place-item {
+		position: relative;
 		flex-basis: 50%;
 		background-repeat: no-repeat;
 		background-size: auto;
 		background-position: center 75%;
 		padding-bottom: 76px;
+		cursor: pointer;
 
 		&--hotel {
 			background-image: url('../img/booking-hotel.png');
@@ -109,9 +112,32 @@
 		&--cottage {
 			background-image: url('../img/booking-cottage.png');
 		}
+
+		&:after {
+			position: absolute;
+			content: '';
+			width: 100%;
+			height: 80px;
+			top: 30px;
+			left: 0;
+			background-color: @color-white;
+			opacity: 0.6;
+		}
+
+		&--active:after {
+			opacity: 0;
+		}
 	}
 
-	&__cottage {
+	&__living-type {
+		display: none;
+	}
+
+	&__living-type--active {
+		display: block;
+	}
+
+	&__list {
 		background-color: @color-white;
 		border: 1px solid @color-shade-gray-3;
 		margin-top: 24px;
@@ -127,19 +153,34 @@
 		}
 	}
 
-	&__cottage-item {
+	&__list-item {
 		margin-top: 10px;
 		margin-bottom: 10px;
 		width: 320px;
 		color: @color-shade-gray-2;
+		cursor: pointer;
 
 		&--active {
+			position: relative;
 			background-image: url('../img/booking-check.png');
 			background-repeat: no-repeat;
 			background-size: auto;
 			background-position: 85px center;
 			font-weight: @font-weight-medium;
 			color: @text-color;
+
+			&:after {
+				position: absolute;
+				content: '';
+				width: 19px;
+				height: 17px;
+				top: 118px;
+				left: 82px;
+				background-image: url('../img/triangle.png');
+				background-repeat: no-repeat;
+				background-size: auto;
+				z-index: 10;
+			}
 
 			@media (min-width: 768px) {
 				background-position: center 65px;
@@ -173,9 +214,12 @@
 		list-style-type: none;
 		font-size: 0;
 
-		@media (min-width: 768px) {
-			display: block;
-			width: 768px;
+		&--active {
+
+			@media (min-width: 768px) {
+				display: block;
+				width: 768px;
+			}
 		}
 	}
 
@@ -402,10 +446,7 @@
 
 			@media (min-width: 768px) {
 				order: 2;
-				background-image: url('../img/booking-question.png');
-				background-repeat: no-repeat;
-				background-size: auto;
-				background-position: 50px 0;
+				position: relative;
 			}
 		}
 
@@ -415,6 +456,18 @@
 				order: 4;
 			}
 		}
+	}
+
+	&__cvv {
+		position: absolute;
+		content: '';
+		width: 16px;
+		height: 17px;
+		top: 10px;
+		right: 0;
+		background-image: url('../img/booking-question.png');
+		background-repeat: no-repeat;
+		background-size: auto;
 	}
 
 	&__card-input {
