@@ -115,11 +115,14 @@ $(document).ready(function(){
 
 	$('.single-room__btn').on('click', function(event) {
 		event.preventDefault();
+		$('.single-room__modal-img').attr('src', $('.single-room__slider .active .single-room__img').attr('src'));
 		$('.single-room__modal').show();
+		$('body').addClass('modal-open');
 	});
 
 	$('.single-room__modal').on('click', function() {
 		$('.single-room__modal').hide();
+		$('body').removeClass('modal-open');
 	});
 
 });
