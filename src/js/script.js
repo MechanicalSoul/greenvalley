@@ -129,10 +129,17 @@ $(document).ready(function(){
     $('#datepicker').datepicker();
   } );
 
+  $('.step__place-item--active > [name="radio-place"]').prop('checked', true);
+  $('.step__list-item--active > [name="radio-cottage"]').prop('checked', true);
+  $('.step__list-item--active > [name="radio-hotel"]').prop('checked', true);
+
   $('.step__place-item').on('click', function() {
   	if(!$(this).hasClass('step__place-item--active')) {
 	  	$('.step__place-item').toggleClass('step__place-item--active');
 	  	$('.step__living-type').toggleClass('step__living-type--active');
+      $('.step__place-item--active > [name="radio-place"]').prop('checked', true);
+      $('.step__list-item--active > [name="radio-cottage"]').prop('checked', true);
+      $('.step__list-item--active > [name="radio-hotel"]').prop('checked', true);
 	  
 			stepOptions = document.querySelectorAll('.step__living-type--active .step__list-item');
 			stepAbouts = document.querySelectorAll('.step__living-type--active .step__about');
@@ -159,6 +166,8 @@ $(document).ready(function(){
     currentLink.classList.add('step__list-item--active');
     var pos = stepOptionsArray.indexOf(currentLink);
     stepAboutsArray[pos].classList.add('step__about--active');
+    $('.step__list-item--active > [name="radio-cottage"]').prop('checked', true);
+    $('.step__list-item--active > [name="radio-hotel"]').prop('checked', true);
 	}
 
 	for(var i = 0; i < stepOptionsArray.length; i++) {
@@ -171,16 +180,17 @@ $(document).ready(function(){
 	  }
   });
 
-
-
-$('.step__form-select').on('change', cost);
-$('.step__personal-item').on('change', cost);
+  $('.step__form-select').on('change', cost);
+  $('.step__personal-item').on('change', cost);
+  $('.step__place-item').on('click', cost);
+  $('.step__list-item').on('click', cost);
 
   function cost() {
 
-var dateForms = document.querySelectorAll('.step__form');
-var dateFormsArray = Array.prototype.slice.call(dateForms);
-  for(var i = 0; i < dateFormsArray.length; i++) {
+    var dateForms = document.querySelectorAll('.step__form');
+    var dateFormsArray = Array.prototype.slice.call(dateForms);
+
+    for(var i = 0; i < dateFormsArray.length; i++) {
       if(!dateFormsArray[i].checkValidity()) {
         console.log("date incorrect");
         $('.step__text-price').show();
@@ -188,90 +198,36 @@ var dateFormsArray = Array.prototype.slice.call(dateForms);
         break;
       }
       else {
-         $('.step__text-price').hide();
-         console.log("date correct");
-         var dateCorrect = true;
+        $('.step__text-price').hide();
+        console.log("date correct");
+        var dateCorrect = true;
       }
-  }
+    }
 
-
-if(!$('.step__personal > input')[0].checkValidity() || !$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
-    
+    if (!$('.step__personal > input')[0].checkValidity() || !$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
       $('.step__text-personal').show();
       $('.step__required--personal').text('введите корректные данные');
       console.log("personal incorrect");
-
     }
     else {
       $('.step__text-personal').hide();
       console.log("personal correct");
-     var personalCorrect = true;
-  }
+      var personalCorrect = true;
+    }
 
-  // $('.step__form').each(function() {
-
-  //   // dateValid = true;
-
-  //   // if($(this).val() == "") {
-  //   //   console.log("date empty");
-  //   //   $('.step__required--date').text('выберите дату');
-  //   //   $('.step__text-price').show();
-  //   //   dateValid = false;
-  //   // }
-  //   // else {
-  //     if(!$('.step__form')[0].checkValidity()) {
-  //       // console.log("date incorrect");
-  //       $('.step__text-price').show();
-  //       $('.step__required--date').text('введите корректные даты');
-  //       // dateValid = false;
-  //     }
-  //     else {
-  //        $('.step__text-price').hide();
-  //        console.log("date correct");
-  //     }
-  //       // else {
-  //       //   $('.step__text-price').hide();
-  //       // }
-  //   // }
-  // });
-
-  // if(dateValid == false) {
-  //   $('.step__text-price').show();
-  // }
-  // else {
-  //    $('.step__text-price').hide();
-  // }
-
-
-  // $('.step__personal-input[type="text"]').each(function() {
-  // 	if($(this).val() == "") {
-  // 		$('.step__text-personal').show();
-  // 	}
-  // 	else {
-  // 		$('.step__text-personal').hide();
-  // 	}
-  // });
-
-  // if(!$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
-  // 	// console.log("not valid");
-  // }
-
-
-  
-	// var itemCost = document.getElementById("path__select").value;
-	// console.log(itemCost);
-	// var select = document.getElementById("people-number__select").value;
-	// console.log(select);
-	// var totalPrice = select * itemCost;
-	// console.log(totalPrice);
-	// document.getElementById("price").innerText=totalPrice + ' Р';
-
+    if (dateCorrect == true && personalCorrect == true) {
+      var placeCost = +$('.step__place-item--active > [name="radio-place"]').val();
+      console.log(placeCost);
+      var livingCost = +$('.step__living-type--active [type="radio"]:checked').val();
+      console.log(livingCost);
+      var totalCost = placeCost + livingCost;
+      console.log(totalCost);
+      $('.step__total-price').text(totalCost + ' Руб.');
+    }
+    else {
+      $('.step__total-price').text('-');
+    }
 	}
-
-
-
-
-
 });
 
 function initMap() {
