@@ -43,9 +43,9 @@
 			<h2 class="step__subtitle">Дата отдыха</h2>			
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата въезда</span>
-				<input type="text" id="datepicker" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year">
+				<input type="text" pattern="[0-9]{2}" id="datepicker" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select" required>
+				<input type="text" pattern="[0-9]{2}" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select" required>
+				<input type="text" pattern="[0-9]{4}" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year" required>
 				<!-- <select name="" id="" class="step__form--select">
 					<option value="" class="step__form--option">1</option>
 					<option value="" class="step__form--option">2</option>
@@ -101,9 +101,9 @@
 			</form>
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата выезда</span>
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year">
+				<input type="text" pattern="[0-9]{2}" id="datepicker" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select" required>
+			<input type="text" pattern="[0-9]{2}" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select" required>
+			<input type="text" pattern="[0-9]{4}" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year" required>
 				<!-- <select name="" id="" class="step__form--select">
 					<option value="" class="step__form--option">1</option>
 					<option value="" class="step__form--option">2</option>
@@ -256,9 +256,9 @@
 			<span class="step__number">Шаг 4</span>
 			<h2 class="step__subtitle">Персональная информация</h2>
 			<form action="" class="step__personal">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Имя'" class="step__personal-item  step__personal-input" placeholder="Имя">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Фамилия'" class="step__personal-item  step__personal-input" placeholder="Фамилия">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Номер телефона'" class="step__personal-item  step__personal-input" placeholder="Номер телефона">
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Имя'" class="step__personal-item  step__personal-input" placeholder="Имя" required>
+				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Фамилия'" class="step__personal-item  step__personal-input" placeholder="Фамилия" required>
+				<input type="tel" pattern="(\+?\d[-.]*){5,13}" onfocus="this.placeholder=''" onblur="this.placeholder='Номер телефона'" class="step__personal-item  step__personal-input" placeholder="Номер телефона" required>
 				<span class="step__personal-item">Мы свяжемся с вами в случае необходимости.</span>
 				<input type="email" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" class="step__personal-item  step__personal-input" placeholder="E-mail" required>
 				<span class="step__personal-item">На этот адрес мы вышлем вам подтверждение о забронированном номере.</span>
@@ -300,8 +300,8 @@
 			<div class="step__total">
 				<span class="step__option">К оплате</span>
 				<span class="step__total-price">-</span>
-				<span class="step__text  step__text--price">Пожалуйста, <a href="#" class="step__required-action--date">выберите дату</a> въезда и выезда, чтобы увидеть сумму к оплате</span>
-				<span class="step__text  step__text--personal">Пожалуйста, <a href="#" class="step__required-action--personal">введите персональные данные</a>, чтобы увидеть сумму к оплате</span>
+				<span class="step__text  step__text-price">Пожалуйста, <a href="#" class="step__required--date">выберите дату</a> въезда и выезда, чтобы увидеть сумму к оплате</span>
+				<span class="step__text  step__text-personal">Пожалуйста, <a href="#" class="step__required--personal">введите персональные данные</a>, чтобы увидеть сумму к оплате</span>
 			</div>
 			<input type="submit" class="btn--green-1  step__book-button" value="ЗАБРОНИРОВАТЬ">
 		</div>

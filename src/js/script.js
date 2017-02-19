@@ -178,27 +178,85 @@ $('.step__personal-item').on('change', cost);
 
   function cost() {
 
-  $('.step__form-select').each(function() {
-  	if($(this).val() == "") {
-  		$('.step__text--price').show();
-  	}
-  	else {
-  		$('.step__text--price').hide();
-  	}
-  });
-
-  $('.step__personal-input').each(function() {
-  	if($(this).val() == "") {
-  		$('.step__text--personal').show();
-  	}
-  	else {
-  		$('.step__text--personal').hide();
-  	}
-  });
-
-  if(!$('[type="email"]')[0].checkValidity()) {
-  	console.log("not valid");
+var dateForms = document.querySelectorAll('.step__form');
+var dateFormsArray = Array.prototype.slice.call(dateForms);
+  for(var i = 0; i < dateFormsArray.length; i++) {
+      if(!dateFormsArray[i].checkValidity()) {
+        console.log("date incorrect");
+        $('.step__text-price').show();
+        $('.step__required--date').text('введите корректные даты');
+        break;
+      }
+      else {
+         $('.step__text-price').hide();
+         console.log("date correct");
+         var dateCorrect = true;
+      }
   }
+
+
+if(!$('.step__personal > input')[0].checkValidity() || !$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
+    
+      $('.step__text-personal').show();
+      $('.step__required--personal').text('введите корректные данные');
+      console.log("personal incorrect");
+
+    }
+    else {
+      $('.step__text-personal').hide();
+      console.log("personal correct");
+     var personalCorrect = true;
+  }
+
+  // $('.step__form').each(function() {
+
+  //   // dateValid = true;
+
+  //   // if($(this).val() == "") {
+  //   //   console.log("date empty");
+  //   //   $('.step__required--date').text('выберите дату');
+  //   //   $('.step__text-price').show();
+  //   //   dateValid = false;
+  //   // }
+  //   // else {
+  //     if(!$('.step__form')[0].checkValidity()) {
+  //       // console.log("date incorrect");
+  //       $('.step__text-price').show();
+  //       $('.step__required--date').text('введите корректные даты');
+  //       // dateValid = false;
+  //     }
+  //     else {
+  //        $('.step__text-price').hide();
+  //        console.log("date correct");
+  //     }
+  //       // else {
+  //       //   $('.step__text-price').hide();
+  //       // }
+  //   // }
+  // });
+
+  // if(dateValid == false) {
+  //   $('.step__text-price').show();
+  // }
+  // else {
+  //    $('.step__text-price').hide();
+  // }
+
+
+  // $('.step__personal-input[type="text"]').each(function() {
+  // 	if($(this).val() == "") {
+  // 		$('.step__text-personal').show();
+  // 	}
+  // 	else {
+  // 		$('.step__text-personal').hide();
+  // 	}
+  // });
+
+  // if(!$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
+  // 	// console.log("not valid");
+  // }
+
+
   
 	// var itemCost = document.getElementById("path__select").value;
 	// console.log(itemCost);
