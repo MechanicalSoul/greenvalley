@@ -125,8 +125,41 @@ $(document).ready(function(){
 		$('body').removeClass('modal-open');
 	});
 
-	$( function() {
-    $('#datepicker').datepicker();
+  var days = 0;
+
+  $( function() {
+    var from = $( "#start" ).datepicker()
+        .on( "change", function() {
+          to.datepicker( "option", "minDate", getDate( this ) );
+          var date = $(this).datepicker('getDate');
+          $( "#start-d" ).text( date.getDate() );
+          $( "#start-m" ).text( date.getMonth() + 1 );
+          $( "#start-y" ).text( date.getFullYear() );
+        }),
+      to = $( "#fin" ).datepicker()
+        .on( "change", function() {
+          from.datepicker( "option", "maxDate", getDate( this ) );
+          var date = $(this).datepicker('getDate');
+          $( "#fin-d" ).text( date.getDate() );
+          $( "#fin-m" ).text( date.getMonth() + 1 );
+          $( "#fin-y" ).text( date.getFullYear() );
+
+          var start = $("#start").datepicker("getDate");
+          var end = $("#fin").datepicker("getDate");
+          days = (end - start) / (1000 * 60 * 60 * 24);
+          console.log(days);
+        });
+ 
+    function getDate( element ) {
+      var date;
+      try {
+        date = $.datepicker.parseDate( "mm/dd/yy", element.value );
+      } catch( error ) {
+        date = null;
+      }
+ 
+      return date;
+    }
   } );
 
   $('.step__place-item--active > [name="radio-place"]').prop('checked', true);
@@ -181,21 +214,27 @@ $(document).ready(function(){
   });
 
   $('.step__form-select').on('change', cost);
-  $('.step__personal-item').on('change', cost);
+  $('.step__personal-input').on('change', cost);
   $('.step__place-item').on('click', cost);
   $('.step__list-item').on('click', cost);
 
   function cost() {
+
+    var name;
+  var surname;
+  var tel;
+  var email;
+  var personalCorrect;
 
     var dateForms = document.querySelectorAll('.step__form');
     var dateFormsArray = Array.prototype.slice.call(dateForms);
 
     for(var i = 0; i < dateFormsArray.length; i++) {
       if(!dateFormsArray[i].checkValidity()) {
-        console.log("date incorrect");
         $('.step__text-price').show();
         $('.step__required--date').text('введите корректные даты');
         break;
+        console.log("date incorrect");
       }
       else {
         $('.step__text-price').hide();
@@ -204,23 +243,110 @@ $(document).ready(function(){
       }
     }
 
-    if (!$('.step__personal > input')[0].checkValidity() || !$('[type="email"]')[0].checkValidity() || !$('[type="tel"]')[0].checkValidity()) {
-      $('.step__text-personal').show();
-      $('.step__required--personal').text('введите корректные данные');
-      console.log("personal incorrect");
+    $('#name').blur(function(){
+      if($(this).val()){
+        if(!$(this)[0].checkValidity()) {
+          $(this).removeClass('correct');
+          $(this).addClass('incorrect');
+          console.log("name incorrect");
+          name = false;
+        }
+        else {
+          $(this).removeClass('incorrect');
+          $(this).addClass('correct');
+          console.log("name correct");
+          name = true;
+          personalCorrect = true;
+        }
+      }
+    });
+
+    $('#surname').blur(function(){
+      if($(this).val()){
+        if(!$(this)[0].checkValidity()) {
+          $(this).removeClass('correct');
+          $(this).addClass('incorrect');
+          console.log("surname incorrect");
+          surname = false;
+        }
+        else {
+          $(this).removeClass('incorrect');
+          $(this).addClass('correct');
+          console.log("surname correct");
+          surname = true;
+        }
+      }
+    });
+
+    $('#tel').blur(function(){
+      if($(this).val()){
+        if(!$(this)[0].checkValidity()) {
+          $(this).removeClass('correct');
+          $(this).addClass('incorrect');
+          console.log("tel incorrect");
+          tel = false;
+        }
+        else {
+          $(this).removeClass('incorrect');
+          $(this).addClass('correct');
+          console.log("tel correct");
+          tel = true;
+        }
+      }
+    });
+
+    $('#email').blur(function(){
+      if($(this).val()){
+        if(!$(this)[0].checkValidity()) {
+          $(this).removeClass('correct');
+          $(this).addClass('incorrect');
+          console.log("email incorrect");
+          email = false;
+        }
+        else {
+          $(this).removeClass('incorrect');
+          $(this).addClass('correct');
+          console.log("email correct");
+          email = true;
+        }
+      }
+    });
+
+    if (name == true) {
+      $('.step__text-personal').hide();
+      personalCorrect = true;
+      console.log(personalCorrect);
     }
     else {
-      $('.step__text-personal').hide();
-      console.log("personal correct");
-      var personalCorrect = true;
+      $('.step__text-personal').show();
+      $('.step__required--personal').text('введите корректные данные');
+      personalCorrect = false;
+      console.log(personalCorrect);
+      console.log(name);
     }
+    
+
+    // if (!$('#name')[0].checkValidity() || !$('#surname')[0].checkValidity() || !$('#tel')[0].checkValidity() || !$('#email')[0].checkValidity()) {
+    //   $(this).removeClass('correct');
+    //   $(this).addClass('incorrect');
+    //   $('.step__text-personal').show();
+    //   $('.step__required--personal').text('введите корректные данные');
+    //   console.log("personal incorrect");
+    // }
+    // else {
+    //   $(this).removeClass('incorrect');
+    //   $(this).addClass('correct');
+    //   $('.step__text-personal').hide();
+    //   console.log("personal correct");
+    //   var personalCorrect = true;
+    // }
 
     if (dateCorrect == true && personalCorrect == true) {
       var placeCost = +$('.step__place-item--active > [name="radio-place"]').val();
       console.log(placeCost);
       var livingCost = +$('.step__living-type--active [type="radio"]:checked').val();
       console.log(livingCost);
-      var totalCost = placeCost + livingCost;
+      var totalCost = placeCost + livingCost + days * 500;
       console.log(totalCost);
       $('.step__total-price').text(totalCost + ' Руб.');
     }

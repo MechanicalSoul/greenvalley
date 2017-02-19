@@ -1,5 +1,19 @@
 .step {
 
+		.correct {
+			background-image: url('../img/booking-check.png');
+			background-repeat: no-repeat;
+			background-position: 15px center;
+			background-size: 16px 12px;
+		}
+
+		.incorrect {
+			background-image: url('../img/booking-check-incorrect.png');
+			background-repeat: no-repeat;
+			background-position: 15px center;
+			background-size: 13px 13px;
+		}
+
 	&:nth-child(odd) {
 		background-color: @color-shade-gray-7;
 	}
@@ -71,7 +85,8 @@
 	}
 
 	&__form {
-		font-size: 0;
+		// font-size: 0;
+		width: 180px;
 
 		@media (min-width: 768px) {
 			margin-left: 10px;
@@ -79,16 +94,49 @@
 		}
 	}
 
-	&__form-select {
+	&__field-parent {
+		position: relative;
+		.row();
+		height: 50px;
+		justify-content: space-between;
+	}
+
+	&__pseudo-field {
+		height: 50px;
 		width: 54px;
-		outline: none;
-		padding: 4px 15px 4px 15px;
-		border: 1px solid @color-shade-gray-3;
+		padding-top: 5px;
+		border-right: 1px solid @color-shade-gray-3;
+		background-color: @color-white;
 		.booking-text-option();
+		color: @color-green;
 
 		&--year {
 			width: 70px;
+			border: none;
 		}
+	}
+
+	&__pseudo-placeholder {
+		display: block;
+		// padding-top: 5px;
+		width: 100%;
+		height: 100%;
+		.booking-text-option();
+	}
+
+	&__form-select {
+		position: absolute;
+		width: 100%;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		// width: 54px;
+		outline: none;
+		// padding: 4px 15px 4px 15px;
+		border: 1px solid @color-shade-gray-3;
+		background-color: transparent;
+		color: transparent;
 	}
 
 	&__place {

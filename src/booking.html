@@ -40,18 +40,24 @@
 	<section class="step" id="date">
 		<div class="step__inner">
 			<span class="step__number">Шаг 1</span>
-			<h2 class="step__subtitle">Дата отдыха</h2>			
+			<h2 class="step__subtitle">Дата отдыха</h2>
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата въезда</span>
-				<input type="text" pattern="[0-9]{2}" id="datepicker" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select" required>
-				<input type="text" pattern="[0-9]{2}" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select" required>
-				<input type="text" pattern="[0-9]{4}" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year" required>
+				<div class="step__field-parent">
+					<input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" id="start" class="step__form-select" required>
+					<span class="step__pseudo-field" id="start-d"><span class="step__pseudo-placeholder">дд</span></span>
+					<span class="step__pseudo-field" id="start-m"><span class="step__pseudo-placeholder">мм</span></span>
+					<span class="step__pseudo-field  step__pseudo-field--year" id="start-y"><span class="step__pseudo-placeholder">гггг</span></span>
+				</div>
 			</form>
 			<form action="" class="step__form">
 				<span class="step__option  step__date">Дата выезда</span>
-				<input type="text" pattern="[0-9]{2}" id="datepicker" onfocus="this.placeholder=''" onblur="this.placeholder='дд'" placeholder="дд" class="step__form-select" required>
-			<input type="text" pattern="[0-9]{2}" onfocus="this.placeholder=''" onblur="this.placeholder='мм'" placeholder="мм" class="step__form-select" required>
-			<input type="text" pattern="[0-9]{4}" onfocus="this.placeholder=''" onblur="this.placeholder='гггг'" placeholder="гггг" class="step__form-select  step__form-select--year" required>
+				<div class="step__field-parent">
+					<input type="text" pattern="\d{1,2}/\d{1,2}/\d{4}" id="fin" class="step__form-select" required>
+					<span class="step__pseudo-field" id="fin-d"><span class="step__pseudo-placeholder">дд</span></span>
+					<span class="step__pseudo-field" id="fin-m"><span class="step__pseudo-placeholder">мм</span></span>
+					<span class="step__pseudo-field  step__pseudo-field--year" id="fin-y"><span class="step__pseudo-placeholder">гггг</span></span>
+				</div>
 			</form>
 		</div>
 	</section>
@@ -154,11 +160,11 @@
 			<span class="step__number">Шаг 4</span>
 			<h2 class="step__subtitle">Персональная информация</h2>
 			<form action="" class="step__personal">
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Имя'" class="step__personal-item  step__personal-input" placeholder="Имя" required>
-				<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Фамилия'" class="step__personal-item  step__personal-input" placeholder="Фамилия" required>
-				<input type="tel" pattern="(\+?\d[-.]*){5,13}" onfocus="this.placeholder=''" onblur="this.placeholder='Номер телефона'" class="step__personal-item  step__personal-input" placeholder="Номер телефона" required>
+				<input id="name" type="text" pattern="^[А-Яа-яЁё]+$" onfocus="this.placeholder=''" onblur="this.placeholder='Имя'" class="step__personal-item  step__personal-input" placeholder="Имя" required>
+				<input id="surname" type="text" pattern="^[А-Яа-яЁё]+$" onfocus="this.placeholder=''" onblur="this.placeholder='Фамилия'" class="step__personal-item  step__personal-input" placeholder="Фамилия" required>
+				<input id="tel" type="tel" pattern="(\+?\d[-.]*){5,13}" onfocus="this.placeholder=''" onblur="this.placeholder='Номер телефона'" class="step__personal-item  step__personal-input" placeholder="Номер телефона" required>
 				<span class="step__personal-item">Мы свяжемся с вами в случае необходимости.</span>
-				<input type="email" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" class="step__personal-item  step__personal-input" placeholder="E-mail" required>
+				<input id="email" type="email" onfocus="this.placeholder=''" onblur="this.placeholder='E-mail'" class="step__personal-item  step__personal-input" placeholder="E-mail" required>
 				<span class="step__personal-item">На этот адрес мы вышлем вам подтверждение о забронированном номере.</span>
 			</form>
 		</div>
