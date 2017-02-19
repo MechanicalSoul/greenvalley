@@ -37,7 +37,7 @@
 		</div>
 	</div>
 
-	<section class="step">
+	<section class="step" id="date">
 		<div class="step__inner">
 			<span class="step__number">Шаг 1</span>
 			<h2 class="step__subtitle">Дата отдыха</h2>			
@@ -149,7 +149,7 @@
 		</div>
 	</section>
 
-	<section class="step  step--short">
+	<section class="step  step--short" id="personal">
 		<div class="step__inner">
 			<span class="step__number">Шаг 4</span>
 			<h2 class="step__subtitle">Персональная информация</h2>
@@ -186,7 +186,9 @@
 							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='Vladimir Vladimirov'"  class="step__card-input" placeholder="Vladimir Vladimirov">
 						</div>
 						<div class="step__card-item">
-							<span class="step__option">Код CVV <a href="#" class="step__cvv"></a></span>
+							<span class="step__option">Код CVV <a href="#" class="step__cvv">
+								<span class="step__cvv-bubble">Код CVV2 можно найти на обратной стороне карты, это последние 3 цифры из семизначного числа рядом с подписью держателя карты.</span>
+							</a></span>
 							<input type="text" onfocus="this.placeholder=''" onblur="this.placeholder='123'"  class="step__card-input  step__card-input--short" placeholder="123">
 						</div>
 						<div class="step__card-item"><span class="step__option">Действует до</span>
@@ -198,8 +200,8 @@
 			<div class="step__total">
 				<span class="step__option">К оплате</span>
 				<span class="step__total-price">-</span>
-				<span class="step__text  step__text-price">Пожалуйста, <a href="#" class="step__required--date">выберите дату</a> въезда и выезда, чтобы увидеть сумму к оплате</span>
-				<span class="step__text  step__text-personal">Пожалуйста, <a href="#" class="step__required--personal">введите персональные данные</a>, чтобы увидеть сумму к оплате</span>
+				<span class="step__text  step__text-price">Пожалуйста, <a href="#date" class="step__required--date">выберите дату</a> въезда и выезда, чтобы увидеть сумму к оплате</span>
+				<span class="step__text  step__text-personal">Пожалуйста, <a href="#personal" class="step__required--personal">введите персональные данные</a>, чтобы увидеть сумму к оплате</span>
 			</div>
 			<input type="submit" class="btn--green-1  step__book-button" value="ЗАБРОНИРОВАТЬ">
 		</div>

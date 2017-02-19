@@ -228,6 +228,19 @@ $(document).ready(function(){
       $('.step__total-price').text('-');
     }
 	}
+
+  $('input[type="radio"]').hide();
+
+  $('.step__cvv').on('click', function(event) {
+    event.preventDefault();
+  });
+  $('.step__cvv').on('mouseenter', function(){
+    $('.step__cvv-bubble').show();
+  });
+  $('.step__cvv').on('mouseleave', function(){
+    $('.step__cvv-bubble').hide();
+  });
+
 });
 
 function initMap() {
