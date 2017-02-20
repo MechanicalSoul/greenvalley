@@ -7,14 +7,6 @@ $(document).ready(function(){
   galleryResize();
   $(window).resize(galleryResize);
 
-  // $('.gallery__img').css('opacity', '0.2');
-  // $('.gallery__slider').on('mouseenter', '.gallery__img', function(){
-  // 	$(this).css('opacity', '1');
-  // });
-  // $('.gallery__slider').on('mouseleave', '.gallery__img', function(){
-  // 	$(this).css('opacity', '0.2');
-  // });
-
   function galleryResize() {
 	  if($(window).width() < 768) {
 	   	$('.gallery__wrap').hide();
@@ -125,11 +117,10 @@ $(document).ready(function(){
 		$('body').removeClass('modal-open');
 	});
 
-  var days = 0;
-
   $( function() {
     var from = $( "#start" ).datepicker()
         .on( "change", function() {
+
           to.datepicker( "option", "minDate", getDate( this ) );
           var date = $(this).datepicker('getDate');
           $( "#start-d" ).text( date.getDate() );
@@ -143,11 +134,6 @@ $(document).ready(function(){
           $( "#fin-d" ).text( date.getDate() );
           $( "#fin-m" ).text( date.getMonth() + 1 );
           $( "#fin-y" ).text( date.getFullYear() );
-
-          var start = $("#start").datepicker("getDate");
-          var end = $("#fin").datepicker("getDate");
-          days = (end - start) / (1000 * 60 * 60 * 24);
-          console.log(days);
         });
  
     function getDate( element ) {
@@ -220,277 +206,66 @@ $(document).ready(function(){
 
   function cost() {
 
+    var days = 0;
+
     var personalCorrect;
     var dateCorrect;
 
-    var dateForms = document.querySelectorAll('.step__form');
-    var dateFormsArray = Array.prototype.slice.call(dateForms);
+    $('.step__form-select').each(function() {
+      var startDate = $('#start');
+      var finDate = $('#fin');
 
-    for(var i = 0; i < dateFormsArray.length; i++) {
-      if(!dateFormsArray[i].checkValidity()) {
+      if ($(startDate).val() && $(finDate).val()) {
+        var isValidStart = startDate[0].checkValidity();
+        var isValidFin = finDate[0].checkValidity();
+        if(isValidStart && isValidFin) {
+          $('.step__text-price').hide();
+          var start = $("#start").datepicker("getDate");
+          var end = $("#fin").datepicker("getDate");
+          days = (end - start) / (1000 * 60 * 60 * 24);
+          console.log(days);
+          dateCorrect = true;
+          console.log("date correct");
+        }
+        else {
+          $('.step__text-price').show();
+          $('.step__required--date').text('введите корректные даты');
+          console.log("date incorrect");
+        }
+      }
+      else {
         $('.step__text-price').show();
         $('.step__required--date').text('введите корректные даты');
-        break;
         console.log("date incorrect");
       }
-      else {
-        $('.step__text-price').hide();
-        console.log("date correct");
-        dateCorrect = true;
-      }
-    }
+    });
 
+    $('.step__personal-input').each(function() {
+      var inputPersonal = $(this);
 
-
-    // $('.step__form-select').each(function() {
-
-  //   var inputDate = $(this);
-  //   if ($(this).val()) {
-  //     var isValidDate = inputDate[0].checkValidity();
-  //     if(isValidDate) {
-  //       inputDate.removeClass("incorrect").addClass("correct");
-  //     }
-  //     else {
-  //       inputDate.removeClass("correct").addClass("incorrect");
-  //     }
-  //   }
-  //   else {
-  //     inputDate.removeClass("correct").removeClass("incorrect");
-  //   }
-  // });
-
-  // if ($('input.correct').length == $('input.step__personal-input').length) {
-  //   $('.step__text-date').hide();
-  //   dateCorrect = true;
-  // }
-  // else {
-  //   $('.step__text-date').show();
-  //   $('.step__required--date').text('введите корректные данные');
-  //   dateCorrect = false;
-  // }
-
-
-  $('.step__personal-input').each(function() {
-    var inputPersonal = $(this);
-
-    if ($(inputPersonal).val()) {
-      var isValidPersonal = inputPersonal[0].checkValidity();
-      if(isValidPersonal) {
-        inputPersonal.removeClass("incorrect").addClass("correct");
+      if ($(inputPersonal).val()) {
+        var isValidPersonal = inputPersonal[0].checkValidity();
+        if(isValidPersonal) {
+          inputPersonal.removeClass("incorrect").addClass("correct");
+        }
+        else {
+          inputPersonal.removeClass("correct").addClass("incorrect");
+        }
       }
       else {
-        inputPersonal.removeClass("correct").addClass("incorrect");
+        inputPersonal.removeClass("correct").removeClass("incorrect");
       }
+    });
+
+    if ($('input.correct').length == $('input.step__personal-input').length) {
+      $('.step__text-personal').hide();
+      personalCorrect = true;
     }
     else {
-      inputPersonal.removeClass("correct").removeClass("incorrect");
+      $('.step__text-personal').show();
+      $('.step__required--personal').text('введите корректные данные');
+      personalCorrect = false;
     }
-  });
-
-  if ($('input.correct').length == $('input.step__personal-input').length) {
-    $('.step__text-personal').hide();
-    personalCorrect = true;
-  }
-  else {
-    $('.step__text-personal').show();
-    $('.step__required--personal').text('введите корректные данные');
-    personalCorrect = false;
-  }
-
-// $("#contact_submit button").click(function(event){
-//   var form_data=$("#contact").serializeArray();
-//   var error_free=true;
-//   for (var input in form_data){
-//     var element=$("#contact_"+form_data[input]['name']);
-//     var valid=element.hasClass("valid");
-//     var error_element=$("span", element.parent());
-//     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
-//     else{error_element.removeClass("error_show").addClass("error");}
-//   }
-//   if (!error_free){
-//     event.preventDefault(); 
-//   }
-//   else{
-//     alert('No errors: Form will be submitted');
-//   }
-// });
-
-//     $('.step__personal-input').blur(function() {
-//       var inputInvalid = $('.step__personal-input').filter(function() {
-//         return $.trim(this.value) === "";
-
-// if(!$(this)[0].checkValidity()) {
-//           $(this).removeClass('correct');
-//           $(this).addClass('incorrect');
-//           console.log("personal incorrect");
-
-//    $('.step__text-personal').show();
-//       $('.step__required--personal').text('введите корректные данные');
-//       console.log(personalCorrect);
-
-//          // var personalCorrect = false
-   
-//         }
-//         else {
-//           $(this).removeClass('incorrect');
-//           $(this).addClass('correct');
-//           console.log("personal correct");
-         
-// $('.step__text-personal').hide();
-//       console.log(personalCorrect);
-
-//          personalCorrect = true;
-//         }
-
-//       });
-
-//       if(!inputInvalid.length) {
-//         console.log("personal correct");
-//       }
-//     });
-
-
-    // var personalForms = document.querySelectorAll('.step__personal-input');
-    // var personalFormsArray = Array.prototype.slice.call(personalForms);
-
-    // for(var i = 0; i < personalFormsArray.length; i++) {
-    //   if(!personalFormsArray[i].checkValidity()) {
-    //     $(personalFormsArray[i]).removeClass('correct');
-    //       $(personalFormsArray[i]).addClass('incorrect');
-    //     $('.step__text-personal').show();
-    //     $('.step__required--personal').text('введите корректные данные');
-    //     break;
-    //     console.log("personal incorrect");
-    //   }
-    //   else {
-    //     $(personalFormsArray[i]).removeClass('incorrect');
-    //       $(personalFormsArray[i]).addClass('correct');
-    //     $('.step__text-personal').hide();
-    //     console.log("personal correct");
-    //     personalCorrect = true;
-    //   }
-    // }
-
-
-//     $('.step__personal-input').each(function(){
-//       if($(this).val()){
-//         if(!$(this)[0].checkValidity()) {
-//           $(this).removeClass('correct');
-//           $(this).addClass('incorrect');
-//           console.log("personal incorrect");
-
-//    $('.step__text-personal').show();
-//       $('.step__required--personal').text('введите корректные данные');
-//       console.log(personalCorrect);
-
-//          // var personalCorrect = false
-   
-//         }
-//         else {
-//           $(this).removeClass('incorrect');
-//           $(this).addClass('correct');
-//           console.log("personal correct");
-         
-// $('.step__text-personal').hide();
-//       console.log(personalCorrect);
-
-//          personalCorrect = true;
-//         }
-//       }
-//     });
-
-
-
-
-    // $('#name').blur(function(){
-    //   if($(this).val()){
-    //     if(!$(this)[0].checkValidity()) {
-    //       $(this).removeClass('correct');
-    //       $(this).addClass('incorrect');
-    //       console.log("name incorrect");
-    //       name = false;
-    //     }
-    //     else {
-    //       $(this).removeClass('incorrect');
-    //       $(this).addClass('correct');
-    //       console.log("name correct");
-    //       name = true;
-    //       personalCorrect = true;
-    //     }
-    //   }
-    // });
-
-    // $('#surname').blur(function(){
-    //   if($(this).val()){
-    //     if(!$(this)[0].checkValidity()) {
-    //       $(this).removeClass('correct');
-    //       $(this).addClass('incorrect');
-    //       console.log("surname incorrect");
-    //       surname = false;
-    //     }
-    //     else {
-    //       $(this).removeClass('incorrect');
-    //       $(this).addClass('correct');
-    //       console.log("surname correct");
-    //       surname = true;
-    //     }
-    //   }
-    // });
-
-    // $('#tel').blur(function(){
-    //   if($(this).val()){
-    //     if(!$(this)[0].checkValidity()) {
-    //       $(this).removeClass('correct');
-    //       $(this).addClass('incorrect');
-    //       console.log("tel incorrect");
-    //       tel = false;
-    //     }
-    //     else {
-    //       $(this).removeClass('incorrect');
-    //       $(this).addClass('correct');
-    //       console.log("tel correct");
-    //       tel = true;
-    //     }
-    //   }
-    // });
-
-    // $('#email').blur(function(){
-    //   if($(this).val()){
-    //     if(!$(this)[0].checkValidity()) {
-    //       $(this).removeClass('correct');
-    //       $(this).addClass('incorrect');
-    //       console.log("email incorrect");
-    //       email = false;
-    //     }
-    //     else {
-    //       $(this).removeClass('incorrect');
-    //       $(this).addClass('correct');
-    //       console.log("email correct");
-    //       email = true;
-    //     }
-    //   }
-    // });
-
-
-
-   
-    
-    
-
-    // if (!$('#name')[0].checkValidity() || !$('#surname')[0].checkValidity() || !$('#tel')[0].checkValidity() || !$('#email')[0].checkValidity()) {
-    //   $(this).removeClass('correct');
-    //   $(this).addClass('incorrect');
-    //   $('.step__text-personal').show();
-    //   $('.step__required--personal').text('введите корректные данные');
-    //   console.log("personal incorrect");
-    // }
-    // else {
-    //   $(this).removeClass('incorrect');
-    //   $(this).addClass('correct');
-    //   $('.step__text-personal').hide();
-    //   console.log("personal correct");
-    //   var personalCorrect = true;
-    // }
 
     if (dateCorrect == true && personalCorrect == true) {
       var placeCost = +$('.step__place-item--active > [name="radio-place"]').val();
