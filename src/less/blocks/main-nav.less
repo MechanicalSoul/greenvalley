@@ -41,6 +41,7 @@
 	}
 
 	&__link {
+		position: relative;
 		display: block;
 		color: @text-color;
 		font-size: @font-size-menu;
@@ -49,6 +50,25 @@
 		text-transform: uppercase;
 		width: 100%;
 
+		&--active {
+			color: @color-orange;
+
+			&:after {
+				position: absolute;
+				content: '';
+				bottom: -5px;
+				left: 50%;
+				transform: translateX(-15px);
+				width: 30px;
+				height: 2px;
+				background-color: @color-orange;
+			}
+
+			&:hover:after {
+				background-color: transparent;
+			}
+		}
+
 		&:hover {
 			color: @color-orange;
 		}
@@ -56,9 +76,5 @@
 		&:active {
 			
 		}
-	}
-
-	&__link--active {
-		// color: @color-orange;
 	}
 }
