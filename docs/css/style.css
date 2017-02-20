@@ -2866,6 +2866,7 @@ a.ui-button:active,
   border: 1px solid #ebebeb;
 }
 .main-nav__link {
+  position: relative;
   display: block;
   color: #191919;
   font-size: 14px;
@@ -2874,17 +2875,35 @@ a.ui-button:active,
   text-transform: uppercase;
   width: 100%;
 }
+.main-nav__link--active {
+  color: #ff7435;
+}
+.main-nav__link--active:after {
+  position: absolute;
+  content: '';
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-15px);
+  width: 30px;
+  height: 2px;
+  background-color: #ff7435;
+}
+.main-nav__link--active:hover:after {
+  background-color: transparent;
+}
 .main-nav__link:hover {
   color: #ff7435;
 }
 .promo {
+  padding-top: 24px;
+  padding-bottom: 160px;
+  margin-bottom: 20px;
   background-image: url('../img/promo-bgr.jpg');
   background-repeat: no-repeat;
   background-position: 0 top;
-  background-size: auto 320px;
+  background-size: cover;
 }
 .promo__inner {
-  padding-top: 20px;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -2896,10 +2915,9 @@ a.ui-button:active,
   min-width: 320px;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
 }
 .promo__slider {
-  padding-top: 3px;
-  margin-bottom: 180px;
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
 }
@@ -2938,6 +2956,13 @@ a.ui-button:active,
   color: #1c1c1c;
   letter-spacing: 0.015em;
   text-align: center;
+}
+.promo__navigation {
+  position: absolute;
+  width: 300px;
+  bottom: -190px;
+  left: 50%;
+  transform: translateX(-150px);
 }
 .promo__tab {
   width: 138px;
@@ -4344,8 +4369,8 @@ a.ui-button:active,
   }
 }
 @media (min-width: 768px) {
-  .promo__slider {
-    margin-bottom: 156px;
+  .promo {
+    padding-bottom: 136px;
   }
   .promo__item--bgr {
     background-color: rgba(255, 255, 255, 0.9);
@@ -4377,6 +4402,9 @@ a.ui-button:active,
     color: #1c1c1c;
     letter-spacing: 0.015em;
     text-align: left;
+  }
+  .promo__navigation {
+    bottom: -170px;
   }
   .promo__tab {
     margin-left: 10px;
@@ -4866,16 +4894,15 @@ a.ui-button:active,
     border: none;
   }
   .promo {
-    background-size: auto 430px;
-  }
-  .promo__inner {
     padding-top: 86px;
-  }
-  .promo__slider {
-    margin-bottom: 220px;
+    padding-bottom: 185px;
+    margin-bottom: 35px;
   }
   .promo__item {
     padding-left: 5px;
+  }
+  .promo__navigation {
+    bottom: -240px;
   }
   .rest {
     padding-top: 76px;
