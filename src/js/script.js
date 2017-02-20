@@ -220,12 +220,8 @@ $(document).ready(function(){
 
   function cost() {
 
-  //   var name;
-  // var surname;
-  // var tel;
-  // var email;
-  var personalCorrect;
-  var dateCorrect;
+    var personalCorrect;
+    var dateCorrect;
 
     var dateForms = document.querySelectorAll('.step__form');
     var dateFormsArray = Array.prototype.slice.call(dateForms);
@@ -245,51 +241,79 @@ $(document).ready(function(){
     }
 
 
-    $('#name').on('blur', function() {
-  var input=$(this);
-  var is_name=input[0].checkValidity();
-  if(is_name){input.removeClass("incorrect").addClass("correct");}
-  else{input.removeClass("correct").addClass("incorrect");}
-});
 
-    $('#surname').on('blur', function() {
-  var input=$(this);
-  var is_email=input[0].checkValidity();
-  if(is_email){input.removeClass("incorrect").addClass("correct");}
-  else{input.removeClass("correct").addClass("incorrect");}
-});
+    // $('.step__form-select').each(function() {
 
-    $('#tel').on('blur', function() {
-  var input=$(this);
-  var is_email=input[0].checkValidity();
-  if(is_email){input.removeClass("incorrect").addClass("correct");}
-  else{input.removeClass("correct").addClass("incorrect");}
-});
+  //   var inputDate = $(this);
+  //   if ($(this).val()) {
+  //     var isValidDate = inputDate[0].checkValidity();
+  //     if(isValidDate) {
+  //       inputDate.removeClass("incorrect").addClass("correct");
+  //     }
+  //     else {
+  //       inputDate.removeClass("correct").addClass("incorrect");
+  //     }
+  //   }
+  //   else {
+  //     inputDate.removeClass("correct").removeClass("incorrect");
+  //   }
+  // });
 
-$('#email').on('blur', function() {
-  var input=$(this);
-  var is_email=input[0].checkValidity();
-  if(is_email){input.removeClass("incorrect").addClass("correct");}
-  else{input.removeClass("correct").addClass("incorrect");}
-});
+  // if ($('input.correct').length == $('input.step__personal-input').length) {
+  //   $('.step__text-date').hide();
+  //   dateCorrect = true;
+  // }
+  // else {
+  //   $('.step__text-date').show();
+  //   $('.step__required--date').text('введите корректные данные');
+  //   dateCorrect = false;
+  // }
 
-$("#contact_submit button").click(function(event){
-  var form_data=$("#contact").serializeArray();
-  var error_free=true;
-  for (var input in form_data){
-    var element=$("#contact_"+form_data[input]['name']);
-    var valid=element.hasClass("valid");
-    var error_element=$("span", element.parent());
-    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
-    else{error_element.removeClass("error_show").addClass("error");}
+
+  $('.step__personal-input').each(function() {
+    var inputPersonal = $(this);
+
+    if ($(inputPersonal).val()) {
+      var isValidPersonal = inputPersonal[0].checkValidity();
+      if(isValidPersonal) {
+        inputPersonal.removeClass("incorrect").addClass("correct");
+      }
+      else {
+        inputPersonal.removeClass("correct").addClass("incorrect");
+      }
+    }
+    else {
+      inputPersonal.removeClass("correct").removeClass("incorrect");
+    }
+  });
+
+  if ($('input.correct').length == $('input.step__personal-input').length) {
+    $('.step__text-personal').hide();
+    personalCorrect = true;
   }
-  if (!error_free){
-    event.preventDefault(); 
+  else {
+    $('.step__text-personal').show();
+    $('.step__required--personal').text('введите корректные данные');
+    personalCorrect = false;
   }
-  else{
-    alert('No errors: Form will be submitted');
-  }
-});
+
+// $("#contact_submit button").click(function(event){
+//   var form_data=$("#contact").serializeArray();
+//   var error_free=true;
+//   for (var input in form_data){
+//     var element=$("#contact_"+form_data[input]['name']);
+//     var valid=element.hasClass("valid");
+//     var error_element=$("span", element.parent());
+//     if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+//     else{error_element.removeClass("error_show").addClass("error");}
+//   }
+//   if (!error_free){
+//     event.preventDefault(); 
+//   }
+//   else{
+//     alert('No errors: Form will be submitted');
+//   }
+// });
 
 //     $('.step__personal-input').blur(function() {
 //       var inputInvalid = $('.step__personal-input').filter(function() {
