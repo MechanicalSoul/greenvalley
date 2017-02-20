@@ -220,11 +220,12 @@ $(document).ready(function(){
 
   function cost() {
 
-    var name;
-  var surname;
-  var tel;
-  var email;
+  //   var name;
+  // var surname;
+  // var tel;
+  // var email;
   var personalCorrect;
+  var dateCorrect;
 
     var dateForms = document.querySelectorAll('.step__form');
     var dateFormsArray = Array.prototype.slice.call(dateForms);
@@ -239,91 +240,217 @@ $(document).ready(function(){
       else {
         $('.step__text-price').hide();
         console.log("date correct");
-        var dateCorrect = true;
+        dateCorrect = true;
       }
     }
 
-    $('#name').blur(function(){
-      if($(this).val()){
-        if(!$(this)[0].checkValidity()) {
-          $(this).removeClass('correct');
-          $(this).addClass('incorrect');
-          console.log("name incorrect");
-          name = false;
-        }
-        else {
-          $(this).removeClass('incorrect');
-          $(this).addClass('correct');
-          console.log("name correct");
-          name = true;
-          personalCorrect = true;
-        }
-      }
-    });
 
-    $('#surname').blur(function(){
-      if($(this).val()){
-        if(!$(this)[0].checkValidity()) {
-          $(this).removeClass('correct');
-          $(this).addClass('incorrect');
-          console.log("surname incorrect");
-          surname = false;
-        }
-        else {
-          $(this).removeClass('incorrect');
-          $(this).addClass('correct');
-          console.log("surname correct");
-          surname = true;
-        }
-      }
-    });
+    $('#name').on('blur', function() {
+  var input=$(this);
+  var is_name=input[0].checkValidity();
+  if(is_name){input.removeClass("incorrect").addClass("correct");}
+  else{input.removeClass("correct").addClass("incorrect");}
+});
 
-    $('#tel').blur(function(){
-      if($(this).val()){
-        if(!$(this)[0].checkValidity()) {
-          $(this).removeClass('correct');
-          $(this).addClass('incorrect');
-          console.log("tel incorrect");
-          tel = false;
-        }
-        else {
-          $(this).removeClass('incorrect');
-          $(this).addClass('correct');
-          console.log("tel correct");
-          tel = true;
-        }
-      }
-    });
+    $('#surname').on('blur', function() {
+  var input=$(this);
+  var is_email=input[0].checkValidity();
+  if(is_email){input.removeClass("incorrect").addClass("correct");}
+  else{input.removeClass("correct").addClass("incorrect");}
+});
 
-    $('#email').blur(function(){
-      if($(this).val()){
-        if(!$(this)[0].checkValidity()) {
-          $(this).removeClass('correct');
-          $(this).addClass('incorrect');
-          console.log("email incorrect");
-          email = false;
-        }
-        else {
-          $(this).removeClass('incorrect');
-          $(this).addClass('correct');
-          console.log("email correct");
-          email = true;
-        }
-      }
-    });
+    $('#tel').on('blur', function() {
+  var input=$(this);
+  var is_email=input[0].checkValidity();
+  if(is_email){input.removeClass("incorrect").addClass("correct");}
+  else{input.removeClass("correct").addClass("incorrect");}
+});
 
-    if (name == true) {
-      $('.step__text-personal').hide();
-      personalCorrect = true;
-      console.log(personalCorrect);
-    }
-    else {
-      $('.step__text-personal').show();
-      $('.step__required--personal').text('введите корректные данные');
-      personalCorrect = false;
-      console.log(personalCorrect);
-      console.log(name);
-    }
+$('#email').on('blur', function() {
+  var input=$(this);
+  var is_email=input[0].checkValidity();
+  if(is_email){input.removeClass("incorrect").addClass("correct");}
+  else{input.removeClass("correct").addClass("incorrect");}
+});
+
+$("#contact_submit button").click(function(event){
+  var form_data=$("#contact").serializeArray();
+  var error_free=true;
+  for (var input in form_data){
+    var element=$("#contact_"+form_data[input]['name']);
+    var valid=element.hasClass("valid");
+    var error_element=$("span", element.parent());
+    if (!valid){error_element.removeClass("error").addClass("error_show"); error_free=false;}
+    else{error_element.removeClass("error_show").addClass("error");}
+  }
+  if (!error_free){
+    event.preventDefault(); 
+  }
+  else{
+    alert('No errors: Form will be submitted');
+  }
+});
+
+//     $('.step__personal-input').blur(function() {
+//       var inputInvalid = $('.step__personal-input').filter(function() {
+//         return $.trim(this.value) === "";
+
+// if(!$(this)[0].checkValidity()) {
+//           $(this).removeClass('correct');
+//           $(this).addClass('incorrect');
+//           console.log("personal incorrect");
+
+//    $('.step__text-personal').show();
+//       $('.step__required--personal').text('введите корректные данные');
+//       console.log(personalCorrect);
+
+//          // var personalCorrect = false
+   
+//         }
+//         else {
+//           $(this).removeClass('incorrect');
+//           $(this).addClass('correct');
+//           console.log("personal correct");
+         
+// $('.step__text-personal').hide();
+//       console.log(personalCorrect);
+
+//          personalCorrect = true;
+//         }
+
+//       });
+
+//       if(!inputInvalid.length) {
+//         console.log("personal correct");
+//       }
+//     });
+
+
+    // var personalForms = document.querySelectorAll('.step__personal-input');
+    // var personalFormsArray = Array.prototype.slice.call(personalForms);
+
+    // for(var i = 0; i < personalFormsArray.length; i++) {
+    //   if(!personalFormsArray[i].checkValidity()) {
+    //     $(personalFormsArray[i]).removeClass('correct');
+    //       $(personalFormsArray[i]).addClass('incorrect');
+    //     $('.step__text-personal').show();
+    //     $('.step__required--personal').text('введите корректные данные');
+    //     break;
+    //     console.log("personal incorrect");
+    //   }
+    //   else {
+    //     $(personalFormsArray[i]).removeClass('incorrect');
+    //       $(personalFormsArray[i]).addClass('correct');
+    //     $('.step__text-personal').hide();
+    //     console.log("personal correct");
+    //     personalCorrect = true;
+    //   }
+    // }
+
+
+//     $('.step__personal-input').each(function(){
+//       if($(this).val()){
+//         if(!$(this)[0].checkValidity()) {
+//           $(this).removeClass('correct');
+//           $(this).addClass('incorrect');
+//           console.log("personal incorrect");
+
+//    $('.step__text-personal').show();
+//       $('.step__required--personal').text('введите корректные данные');
+//       console.log(personalCorrect);
+
+//          // var personalCorrect = false
+   
+//         }
+//         else {
+//           $(this).removeClass('incorrect');
+//           $(this).addClass('correct');
+//           console.log("personal correct");
+         
+// $('.step__text-personal').hide();
+//       console.log(personalCorrect);
+
+//          personalCorrect = true;
+//         }
+//       }
+//     });
+
+
+
+
+    // $('#name').blur(function(){
+    //   if($(this).val()){
+    //     if(!$(this)[0].checkValidity()) {
+    //       $(this).removeClass('correct');
+    //       $(this).addClass('incorrect');
+    //       console.log("name incorrect");
+    //       name = false;
+    //     }
+    //     else {
+    //       $(this).removeClass('incorrect');
+    //       $(this).addClass('correct');
+    //       console.log("name correct");
+    //       name = true;
+    //       personalCorrect = true;
+    //     }
+    //   }
+    // });
+
+    // $('#surname').blur(function(){
+    //   if($(this).val()){
+    //     if(!$(this)[0].checkValidity()) {
+    //       $(this).removeClass('correct');
+    //       $(this).addClass('incorrect');
+    //       console.log("surname incorrect");
+    //       surname = false;
+    //     }
+    //     else {
+    //       $(this).removeClass('incorrect');
+    //       $(this).addClass('correct');
+    //       console.log("surname correct");
+    //       surname = true;
+    //     }
+    //   }
+    // });
+
+    // $('#tel').blur(function(){
+    //   if($(this).val()){
+    //     if(!$(this)[0].checkValidity()) {
+    //       $(this).removeClass('correct');
+    //       $(this).addClass('incorrect');
+    //       console.log("tel incorrect");
+    //       tel = false;
+    //     }
+    //     else {
+    //       $(this).removeClass('incorrect');
+    //       $(this).addClass('correct');
+    //       console.log("tel correct");
+    //       tel = true;
+    //     }
+    //   }
+    // });
+
+    // $('#email').blur(function(){
+    //   if($(this).val()){
+    //     if(!$(this)[0].checkValidity()) {
+    //       $(this).removeClass('correct');
+    //       $(this).addClass('incorrect');
+    //       console.log("email incorrect");
+    //       email = false;
+    //     }
+    //     else {
+    //       $(this).removeClass('incorrect');
+    //       $(this).addClass('correct');
+    //       console.log("email correct");
+    //       email = true;
+    //     }
+    //   }
+    // });
+
+
+
+   
+    
     
 
     // if (!$('#name')[0].checkValidity() || !$('#surname')[0].checkValidity() || !$('#tel')[0].checkValidity() || !$('#email')[0].checkValidity()) {
