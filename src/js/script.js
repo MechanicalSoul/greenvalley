@@ -305,7 +305,7 @@ function initMap() {
     zoom: 14
   });
 
-  var image = '../img/marker.png';
+  var image = '..greenvalley/img/marker.png';
   var marker = new google.maps.Marker({
     position: {lat: 60.192, lng: 29.638},
     map: map,

@@ -4445,7 +4445,7 @@ a.ui-button:active,
     overflow: hidden;
   }
   .gallery__img {
-    opacity: 0.2;
+    opacity: 0.4;
   }
   .reviews__title {
     font-size: 30px;
