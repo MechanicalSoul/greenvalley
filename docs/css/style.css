@@ -2845,6 +2845,7 @@ a.ui-button:active,
   top: 75px;
   left: 0;
   width: 100%;
+  z-index: 1;
 }
 .main-nav__list {
   list-style-type: none;
@@ -3079,7 +3080,9 @@ a.ui-button:active,
   width: 100%;
 }
 .gallery__slider {
-  width: 320px;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1180px;
   cursor: pointer;
   overflow: hidden;
   background-color: #000000;
@@ -4099,18 +4102,6 @@ a.ui-button:active,
   font-weight: 500;
   color: #191919;
 }
-.step__list-item--active:after {
-  position: absolute;
-  content: '';
-  width: 19px;
-  height: 17px;
-  top: 118px;
-  left: 82px;
-  background-image: url('../img/triangle.png');
-  background-repeat: no-repeat;
-  background-size: auto;
-  z-index: 10;
-}
 .step__about {
   display: none;
   position: relative;
@@ -4317,6 +4308,7 @@ a.ui-button:active,
   padding-bottom: 4px;
 }
 .step__cvv {
+  display: none;
   position: absolute;
   content: '';
   width: 16px;
@@ -4451,10 +4443,6 @@ a.ui-button:active,
     width: 100%;
     max-width: 1180px;
     overflow: hidden;
-  }
-  .gallery__slider {
-    width: 100%;
-    max-width: 1180px;
   }
   .gallery__img {
     opacity: 0.2;
@@ -4722,6 +4710,18 @@ a.ui-button:active,
   .step__list-item--active {
     background-position: center 65px;
   }
+  .step__list-item--active:after {
+    position: absolute;
+    content: '';
+    width: 19px;
+    height: 17px;
+    top: 118px;
+    left: 82px;
+    background-image: url('../img/triangle.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    z-index: 10;
+  }
   .step__list-item {
     display: inline-block;
     width: 25%;
@@ -4831,6 +4831,9 @@ a.ui-button:active,
   .step__card-item:nth-child(4) {
     -ms-flex-order: 4;
     order: 4;
+  }
+  .step__cvv {
+    display: block;
   }
   .step__book-button {
     width: 768px;
