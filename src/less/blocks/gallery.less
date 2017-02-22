@@ -32,15 +32,12 @@
 	}
 
 	&__slider {
-		width: 320px;
+		width: 100%;
+		min-width: 320px;
+		max-width: 1180px;
 		cursor: pointer;
 		overflow: hidden;
 		background-color: @color-black;
-
-		@media (min-width: 768px) {
-			width: 100%;
-			max-width: 1180px;
-		}
 	}
 
 	&__img {

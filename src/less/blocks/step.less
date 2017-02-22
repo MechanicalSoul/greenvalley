@@ -85,7 +85,6 @@
 	}
 
 	&__form {
-		// font-size: 0;
 		width: 180px;
 
 		@media (min-width: 768px) {
@@ -226,21 +225,21 @@
 			font-weight: @font-weight-medium;
 			color: @text-color;
 
-			&:after {
-				position: absolute;
-				content: '';
-				width: 19px;
-				height: 17px;
-				top: 118px;
-				left: 82px;
-				background-image: url('../img/triangle.png');
-				background-repeat: no-repeat;
-				background-size: auto;
-				z-index: 10;
-			}
-
 			@media (min-width: 768px) {
 				background-position: center 65px;
+
+				&:after {
+					position: absolute;
+					content: '';
+					width: 19px;
+					height: 17px;
+					top: 118px;
+					left: 82px;
+					background-image: url('../img/triangle.png');
+					background-repeat: no-repeat;
+					background-size: auto;
+					z-index: 10;
+				}
 			}
 		}
 
@@ -542,6 +541,7 @@
 	}
 
 	&__cvv {
+		display: none;
 		position: absolute;
 		content: '';
 		width: 16px;
@@ -551,6 +551,10 @@
 		background-image: url('../img/booking-question.png');
 		background-repeat: no-repeat;
 		background-size: auto;
+
+		@media (min-width: 768px) {
+			display: block;
+		}
 	}
 
 	&__cvv-bubble {

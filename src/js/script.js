@@ -8,18 +8,20 @@ $(document).ready(function(){
   $(window).resize(galleryResize);
 
   function galleryResize() {
+    var widthSlider = parseInt($('.gallery__slider').css('width'));
+
 	  if($(window).width() < 768) {
 	   	$('.gallery__wrap').hide();
-	   	$('.gallery__slider').height(215);
+      heightSlider = widthSlider / 1.47;
+      $('.gallery__slider').css('height', heightSlider);
 	  }
    	else {
 	   	$('.gallery__wrap').show();
 	  	var widthMain = parseInt($('.gallery__wrap').css('width')),
 	  	heightMain = widthMain / 2.36;
 	  	$('.gallery__wrap').css('height', heightMain);
-	  	var widthSlider = parseInt($('.gallery__slider').css('width')),
-	  	heightSlider = widthSlider / 11.8;
-	  	$('.gallery__slider').css('height', heightSlider);
+      heightSlider = widthSlider / 11.8;
+      $('.gallery__slider').css('height', heightSlider);
 	  }
   };
 
@@ -303,10 +305,11 @@ function initMap() {
     zoom: 14
   });
 
+  var image = '../img/marker.png';
   var marker = new google.maps.Marker({
     position: {lat: 60.192, lng: 29.638},
     map: map,
-    icon: '../img/marker.png'
+    icon: image
   });
 
 	var center;
